@@ -1,0 +1,62 @@
+.brandName {
+    color: purple;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.brandName:hover {
+    color: orangered;
+    text-decoration: none;
+}
+
+.nav-link {
+    font-size: 15px;
+}
+
+.dropdown-item-rounded {
+    background-color: #bce6eb;
+    border-radius: 25px;
+    -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item-rounded:hover {
+    background-color: #fca3cc;
+}
+
+.main-container {
+    background-image: url("/images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+body {
+    background-image: url("/images/background-3.jpg");
+    background-size: auto;
+    background-attachment: fixed;
+}
+
+/* [1] The container */
+.productDiv {
+    overflow: hidden;
+    /* [1.2] Hide the overflowing of child elements */
+}
+
+/* [2] Transition property for smooth transformation of images */
+.productDiv img {
+    transition: transform .5s ease;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+.productDiv:hover img {
+    transform: scale(1.1);
+}
+
+.productImage:hover {
+    cursor: pointer;
+}
+
+.category-tab{
+    border-radius:100px;
+}
