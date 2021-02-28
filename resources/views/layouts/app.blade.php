@@ -15,8 +15,8 @@
     <meta name="author" content="Ali Abbasov">
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/welcome.js') }}" defer></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/welcome.js" defer></script>
     <script src="https://kit.fontawesome.com/d02e083562.js" crossorigin="anonymous"></script>
 
     <!-- Fonts -->
@@ -24,8 +24,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
+    <link href="/css/welcome.css" rel="stylesheet">
 
     <!-- Photoswipe links -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js" integrity="sha512-2R4VJGamBudpzC1NTaSkusXP7QkiUYvEKhpJAxeVCqLDsgW4OqtzorZGpulE3eEA7p++U0ZYmqBwO3m+R2hRjA==" crossorigin="anonymous"></script>
@@ -39,7 +39,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-info shadow-sm">
             <div class="container">
-                <a class="brandName" href="{{ url('/') }}">
+                <a class="brandName" href="/">
                     MyCookingLife
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
