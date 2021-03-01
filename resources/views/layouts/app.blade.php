@@ -19,6 +19,9 @@
     <script src="js/welcome.js" defer></script>
     <script src="https://kit.fontawesome.com/d02e083562.js" crossorigin="anonymous"></script>
 
+    <!-- Google AdSense script -->
+    <script data-ad-client="ca-pub-9504860613301289" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
