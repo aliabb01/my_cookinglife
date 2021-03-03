@@ -4,6 +4,10 @@
         bottom: 0;
     }
 
+    .bg-footer{
+        background-color:#350b40;
+    }
+
     a {
         color: rgb(210 210 210)
     }
@@ -61,17 +65,18 @@
 </style>
 
 
-<div class="container-fluid bg-dark text-light pt-5 pb-5 mt-auto">
+<div class="container-fluid bg-footer text-light pt-5 pb-5 mt-auto">
     <div class="row">
         <div class="col-md-3">
             <h3>MyCookingLife</h3>
             <p>Ləzzət buradan başlayır!</p>
         </div>
         <div class="col-md-3">
-            <h1>Link?</h1>
+            <h3>Haqqımızda:</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod doloremque fugiat error! Dolorem sed non iure provident cupiditate debitis a.</p>
         </div>
         <div class="col-md-3">
-            <h2>Əlaqə:</h2>
+            <h3>Əlaqə:</h3>
             <ul class="list-group">
                 <li style="list-style-type:none;">Tel: <a href="tel:+994 555370259">+994 (055) 537-02-59</a></li>
                 <li style="list-style-type:none;">Email: <a href="mailto:mycookinglifecontact@gmail.com">mycookinglifecontact@gmail.com</a></li>
@@ -82,24 +87,24 @@
             <div class="row">
                 <div class="col-3 col-xs-3">
                     <a class="fab fa-facebook-f fb fa-2x" data-toggle="tooltip" data-placement="top" title="Facebook"
-                        data-delay='{"show":"500", "hide":"100"}'></a>
+                        data-delay='{"show":"500", "hide":"100"}' target="_blank"></a>
                 </div>
 
                 <div class="col-3 col-xs-3">
                     <a href="https://www.instagram.com/my_cookinglife/" class="fab fa-instagram insta fa-2x"
                         data-toggle="tooltip" data-placement="top" title="Instagram"
-                        data-delay='{"show":"500", "hide":"100"}'></a>
+                        data-delay='{"show":"500", "hide":"100"}' target="_blank"></a>
                 </div>
 
                 <div class="col-3 col-xs-3">
                     <a href="https://api.whatsapp.com/send/?phone=994555370259&text&app_absent=0"
                         class="fab fa-whatsapp wp fa-2x" data-toggle="tooltip" data-placement="top" title="WhatsApp"
-                        data-delay='{"show":"500", "hide":"100"}'></a>
+                        data-delay='{"show":"500", "hide":"100"}' target="_blank"></a>
                 </div>
 
                 <div class="col-3 col-xs-3">
                     <a class="fab fa-youtube yt fa-2x" data-toggle="tooltip" data-placement="top" title="YouTube"
-                        data-delay='{"show":"500", "hide":"100"}'></a>
+                        data-delay='{"show":"500", "hide":"100"}' target="_blank"></a>
                 </div>
             </div>
         </div>
