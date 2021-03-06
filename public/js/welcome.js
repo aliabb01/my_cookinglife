@@ -14,6 +14,20 @@ $(function () {
     })
 });
 
+let i = 0;
+let txt = 'Dadlı, ləzzətli şirniyyatlar səhifəsinə xoş gəlmisiniz';
+let speed = 100;
+
+$(document).on("load", typeWriter())
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("nameAuthor").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
 var isMobile = false; //initiate as false
 // device detection
 if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
