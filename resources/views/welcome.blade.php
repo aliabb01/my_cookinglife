@@ -5,8 +5,8 @@
 
     <div class="container pt-5 mt-5">
         <div class="jumbotron">
-            <h1>&lt;/&gt;</h1>
-            <p><code>&lt;/&gt;</code></p>
+            <h3 id="nameAuthor"></h3>
+            <p><code></code></p>
         </div>
     </div>
 
@@ -33,6 +33,7 @@
                     </div>
                 </div>
             </div>
+
 
             <!-- Tab panes -->
             <div class="tab-content mt-5 pb-5">

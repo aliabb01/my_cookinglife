@@ -14,8 +14,6 @@
 
     <title>MyCookingLife</title>
 
-
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com/css?family=Nunito">
@@ -44,7 +42,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav m-3">
-                        <li class="nav-item"><a href="" class="nav-link">Ana Səhifə</a> </li>
+                        <li class="nav-item"><a href="/ev" class="nav-link">Ana Səhifə</a> </li>
                         <li class="nav-item"><a href="" class="nav-link">Haqqımızda</a></li>
                         <li class="nav-item dropdown bottom-line">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
@@ -70,7 +68,7 @@
                                 </a>
                             </div>
                         </li>
-                        <li class="nav-item"><a href="" class="nav-link">Əlaqə</a></li>
+                        <li class="nav-item"><a href="/elaqe" class="nav-link">Əlaqə</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -121,6 +119,7 @@
     <script src="js/app.js" defer></script>
     <script src="js/welcome.js" defer></script>
     <script src="https://kit.fontawesome.com/d02e083562.js" crossorigin="anonymous"></script>
+
 
     <!-- Photoswipe links -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js"
