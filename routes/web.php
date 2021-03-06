@@ -19,4 +19,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+/*Route::get('/ev', 'HomeController@index')->name('welcome');*/
+
+Route::get('/ev', function () {
+    return view('welcome');
+});
+
+Route::get('/elaqe', function () {
+    return view('contact');
+});
