@@ -1,5 +1,6 @@
 const mix = require('laravel-mix');
 require('laravel-mix-purgecss'); //PurgeCSS to remove unused css
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
