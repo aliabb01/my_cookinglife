@@ -12,6 +12,8 @@
     <meta name="keywords" content="Şirniyyat, Tort, Keks, Piroq, Cake, Sweets, Dessert, MyCookingLife">
     <meta name="author" content="Ali Abbasov">
 
+    <meta name="theme-color" content="#350B40">
+
     <title>MyCookingLife</title>
 
     <!-- Fonts -->
@@ -108,6 +110,59 @@
             </div>
         </nav>
 
+
+
+        <div class="container mt-3">
+
+            @if (Session::has('elaqe'))
+            <div id="emailAlert">
+
+
+                <div class="alert success-div" style="background-color:#B5EBCC; border-bottom:5px solid green;"
+                    role="alert">
+                    <div class="row">
+
+                        <svg width="75" height="75" xmlns="http://www.w3.org/2000/svg">
+                            <g>
+                                <title>Layer 1</title>
+                                <ellipse fill="#5fbf00" opacity="undefined" cx="389.50001" cy="272" id="svg_1"
+                                    rx="190.00001" ry="193.5" stroke="#000" />
+                                <rect fill="#ffffff" stroke-width="null" stroke-dasharray="null" stroke-opacity="null"
+                                    opacity="undefined" x="427.99998" y="143.73707" width="24" height="263.52412"
+                                    id="svg_6" transform="rotate(34 439.9999694824221,275.49914550781244) "
+                                    stroke="#000" />
+                                <rect fill="#ffffff" stroke="#000" stroke-width="null" stroke-dasharray="null"
+                                    stroke-opacity="null" opacity="undefined" x="308.5" y="269.5" width="24"
+                                    height="148" id="svg_3"
+                                    transform="rotate(-42 320.5000000000002,343.50000000000006) " />
+                                <ellipse stroke-width="0" ry="27.1134" rx="27.62886" id="svg_2" cy="37.5" cx="37.5"
+                                    opacity="undefined" stroke="#000" fill="#5fbf00" />
+                                <rect stroke="#000"
+                                    transform="rotate(-44.57363510131836 26.4429931640625,47.84653854370117) "
+                                    id="svg_7" height="17.83265" width="2.53879" y="38.93021" x="25.1736"
+                                    opacity="undefined" stroke-opacity="null" stroke-dasharray="null" stroke-width="0"
+                                    fill="#ffffff" />
+                                <path stroke="#000" id="svg_8"
+                                    d="m43.40039,20.65256l2.67983,0l0,38.99801l-2.74386,-0.12487l0.06403,-38.87314z"
+                                    transform="rotate(44.773075103759766 44.7082939147949,40.15156555175783) "
+                                    opacity="undefined" stroke-opacity="null" stroke-linecap="null"
+                                    stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#ffffff" />
+                            </g>
+                        </svg>
+
+                        <div class="col">
+                            <h4 class="" style="color:#00AB54;"><i> <b> Göndərildi </b> </i></h4>
+                            <p class=""><strong>{!! \Session::get('elaqe') !!} </strong></p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            @endif
+        </div>
+
         <main class="">
             @yield('content')
         </main>
@@ -117,7 +172,9 @@
 
     <!-- Scripts -->
     <script src="js/app.js" defer></script>
+    <script src="js/progress.js" defer></script>
     <script src="js/welcome.js" defer></script>
+
     <script src="https://kit.fontawesome.com/d02e083562.js" crossorigin="anonymous"></script>
 
 

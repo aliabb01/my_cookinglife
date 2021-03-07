@@ -67,22 +67,22 @@
 
 <div class="container-fluid bg-footer text-light pt-5 pb-5 mt-auto">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 footer-columns">
             <h3>MyCookingLife</h3>
             <p>Ləzzət buradan başlayır!</p>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 footer-columns">
             <h3>Haqqımızda:</h3>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod doloremque fugiat error! Dolorem sed non iure provident cupiditate debitis a.</p>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 footer-columns">
             <h3>Əlaqə:</h3>
             <ul class="list-group">
                 <li style="list-style-type:none;">Tel: <a href="tel:+994 555370259">+994 (055) 537-02-59</a></li>
                 <li style="list-style-type:none;">Email: <a href="mailto:mycookinglifecontact@gmail.com">mycookinglifecontact@gmail.com</a></li>
             </ul>
         </div>
-        <div class="col-md-3 text-center">
+        <div class="col-md-3 text-center footer-columns">
             <h4>Sosial Hesablar:</h4>
             <div class="row">
                 <div class="col-3 col-xs-3">
