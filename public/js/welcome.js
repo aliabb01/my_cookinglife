@@ -41,9 +41,9 @@ $(window).on("beforeunload", function () {
 
 });
 
-$(window).on("unload", function () {
+/*$(window).on("load", function () {
     progressBar.finish();
-})
+}); */
 
 $("a").on("click", function () {
     progressBar.reset();
