@@ -12,6 +12,9 @@
     <meta name="keywords" content="Şirniyyat, Tort, Keks, Piroq, Cake, Sweets, Dessert, MyCookingLife">
     <meta name="author" content="Ali Abbasov">
 
+    <!-- Google (Search console) site verification-->
+    <meta name="google-site-verification" content="z0DRLygPLhIVapi2gjZW2bf0-8FPTq0vZYELVXF6zQ0" />
+
     <meta name="theme-color" content="#30a5ff">
 
     <title>MyCookingLife</title>
@@ -179,6 +182,15 @@
 
     <script src="https://kit.fontawesome.com/d02e083562.js" crossorigin="anonymous"></script>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EB0QDTG7KE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EB0QDTG7KE');
+    </script>
 
     <!-- Photoswipe links -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js"
