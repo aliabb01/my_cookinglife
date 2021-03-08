@@ -30,6 +30,6 @@ class ContactFormMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.contact-form');
+        return $this->subject('MyCookingLife Əlaqə emaili')->markdown('emails.contact-form');
     }
 }

@@ -12,7 +12,7 @@
     <meta name="keywords" content="Şirniyyat, Tort, Keks, Piroq, Cake, Sweets, Dessert, MyCookingLife">
     <meta name="author" content="Ali Abbasov">
 
-    <meta name="theme-color" content="#350B40">
+    <meta name="theme-color" content="#30a5ff">
 
     <title>MyCookingLife</title>
 
