@@ -28,6 +28,6 @@ class ContactFormController extends Controller
         //Send an email
         Mail::to('mycookinglifecontact@gmail.com')->send(new ContactFormMail($data));
 
-        return redirect('elaqe')->with('elaqe', 'Yazdığınız ismarıc müvəffəqiyyətlə göndərildi.');
+        return redirect()->back()->with('elaqe', 'Yazdığınız ismarıc müvəffəqiyyətlə göndərildi.');
     }
 }
