@@ -6,7 +6,7 @@
 
 <strong> Göndərənin e-maili </strong> - {{ $data['senderEmailName'] }}
 
-<strong> İsmarış </strong> - <p style="border:10px;">{{ $data['senderText'] }}</p>
+<strong> İsmarış :</strong>
 {{--# Əlaqə
 
 
@@ -16,6 +16,13 @@ The body of your message.
 Button Text
 @endcomponent
 
+
 Thanks,<br>
 {{ config('app.name') }} --}}
+
+
+@component('mail::panel')
+<p style="border:10px;">{{ $data['senderText'] }}</p>
+@endcomponent
+
 @endcomponent
