@@ -1,13 +1,25 @@
-var progressOptions = {
+var progressOptions = { //Options for the progressBar
     id: 'top-progress-bar',
-    color: '#0F308F',
+    color: '#03a1fc', //#0F308F
     height: '5px',
-    duration:1
+    duration:2
 }
 
-var progressBar = new ToProgress(progressOptions);
+var alertProgressOptions = {  // Options for progressBar of email alert 
+    id: 'bottom-progress-bar',
+    color: '#008000',
+    height: '3px',
+    duration: 4.2,
+    position: 'bottom'
+}
 
-if ($("#emailAlert").is(":visible")) {
+var progressBar = new ToProgress(progressOptions); //progressBar initialization
+
+var alertProgress = new ToProgress(alertProgressOptions, ("#alertProgress")); //alertProgress initialization
+
+alertProgress.setProgress(100); //Set email alert progress to 100 initially
+
+if ($("#emailAlert").is(":visible")) {   //if the alert box is visible then run this
     /*Swal.fire({
         position: 'top-end',
         icon: 'success',
@@ -17,24 +29,25 @@ if ($("#emailAlert").is(":visible")) {
         timer: 3500,
         timerProgressBar: true
       });*/
-
+    
+    alertProgress.decrease(100);
     setTimeout(function () {
         $("#emailAlert").fadeOut();
     }, 4000);
 }
 
-$(window).on("beforeunload",function() {
+$(window).on("beforeunload", function () {
     progressBar.increase(100);
-});
-
-$(".btn-email-send").on('click', function () {
-    /*progressBar.increase(100);
-    setTimeout(function(){
-        progressBar.finish();
-    }, 4000)*/
 
 });
 
+$(window).on("unload", function () {
+    progressBar.finish();
+})
+
+$("a").on("click", function () {
+    progressBar.reset();
+});
 
 
 $(function () {
@@ -57,7 +70,7 @@ let i = 0;
 let txt = 'Dadlı, ləzzətli şirniyyatlar səhifəsinə xoş gəlmisiniz';
 let speed = 100;
 
-$(document).on("load", typeWriter())
+$(document).on("load", typeWriter()) //Typewriter in main page
 
 function typeWriter() {
     if (i < txt.length) {
@@ -77,7 +90,12 @@ if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elain
 if (isMobile) {
     $(".category-tab").addClass("mb-3"); //if device is mobile then add margin below the category tabs and footer columns
     $(".footer-columns").addClass("mb-5");
+    //progressBar.hide();
+} else {
+    //progressBar.show();
 }
+
+
 
 var pswpElement = document.querySelectorAll(".pswp")[0],
     dovsanTort = [{

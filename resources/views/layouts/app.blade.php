@@ -115,11 +115,11 @@
         <div class="container mt-3">
 
             @if (Session::has('elaqe'))
+            <!-- If session is contact session then show an alert -->
             <div id="emailAlert">
 
 
-                <div class="alert success-div" style="background-color:#B5EBCC; border-bottom:5px solid green;"
-                    role="alert">
+                <div class="alert success-div" style="background-color:#B5EBCC;" role="alert">
                     <div class="row">
 
                         <svg width="75" height="75" xmlns="http://www.w3.org/2000/svg">
@@ -155,6 +155,8 @@
                             <p class=""><strong>{!! \Session::get('elaqe') !!} </strong></p>
                         </div>
                     </div>
+
+                    <span id="alertProgress"></span>
 
                 </div>
 
