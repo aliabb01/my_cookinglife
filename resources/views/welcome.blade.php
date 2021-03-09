@@ -49,7 +49,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Marsipanlı Tort</h5>
                                 <p class="card-text">Biskvitli marsipanlı tort.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <p class="card-text"><small class="text-muted"></small></p>
                             </div>
                         </div>
                         <div class="card">
@@ -60,7 +60,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Spartak</h5>
                                 <p class="card-text">Qaymaqlı şokoladlı spartak tortu.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <p class="card-text"><small class="text-muted"></small></p>
                             </div>
                         </div>
                         <div class="card">
@@ -70,10 +70,8 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Yeni İl Tortu</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This card has even longer content than the first to
-                                    show that equal height action.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <p class="card-text">Qozlu, şokoladlı, qaymaqlı yeni il tortu</p>
+                                <p class="card-text"><small class="text-muted"></small></p>
                             </div>
                         </div>
                     </div>
@@ -81,9 +79,43 @@
                 </div>
 
                 <div class="tab-pane" id="cupcakeler" role="tabpanel">
-
+                    <div class="card-deck">
+                        <div class="card">
+                            <div class="productDiv">
+                                <img src="https://instagram.fgyd6-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/146263736_100312038738057_1553917154071211534_n.jpg?tp=1&_nc_ht=instagram.fgyd6-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=NF3DjhkIHCUAX-_PB7I&oh=945302d5b5c0d4e8c29322e6807bc87e&oe=6070BC0A"
+                                    class="productImage card-img-top cupcake1" loading="lazy" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Cupcake 1</h5>
+                                <p class="card-text"></p>
+                                <p class="card-text"><small class="text-muted"></small></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="productDiv">
+                                <img src="https://instagram.fgyd6-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/129764168_116425046959537_8077134991116399044_n.jpg?tp=1&_nc_ht=instagram.fgyd6-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=IfKjpw01880AX_n2dD-&oh=5280a484ddc1be602914178d1af84d21&oe=6071A479"
+                                    class="productImage card-img-top cupcake2" loading="lazy" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Cupcake 2</h5>
+                                <p class="card-text"></p>
+                                <p class="card-text"><small class="text-muted"></small></p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="productDiv">
+                                <img src="https://instagram.fgyd6-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/123416163_361211471623140_8377895987371336777_n.jpg?tp=1&_nc_ht=instagram.fgyd6-1.fna.fbcdn.net&_nc_cat=100&_nc_ohc=Li1SkuEYEoIAX8omyGI&oh=b97a6cbd162c79a7f3df76bcd36b43e6&oe=607003DF"
+                                    class="productImage card-img-top cupcake3" loading="lazy" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Cupcake 3</h5>
+                                <p class="card-text"></p>
+                                <p class="card-text"><small class="text-muted"></small></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
+                
                 <div class="tab-pane" id="keksler" role="tabpanel">
 
                     <div class="card-deck">
@@ -94,9 +126,8 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Ekler</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <p class="card-text">Qaymaqlı və kremli</p>
+                                <p class="card-text"><small class="text-muted"></small></p>
                             </div>
                         </div>
                         <div class="card">
@@ -105,10 +136,9 @@
                                     class="productImage card-img-top gilemeyveliPiroq" loading="lazy" alt="...">
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">Tort2</h5>
-                                <p class="card-text">This card has supporting text below as a natural lead-in to
-                                    additional content.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <h5 class="card-title">Giləmeyvəli Keks</h5>
+                                <p class="card-text">Yüngül</p>
+                                <p class="card-text"><small class="text-muted"></small></p>
                             </div>
                         </div>
                         <div class="card">
@@ -117,11 +147,9 @@
                                     class="productImage card-img-top almaliPiroq" loading="lazy" alt="...">
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">Tort3</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This card has even longer content than the first to
-                                    show that equal height action.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <h5 class="card-title">Almalı Piroq</h5>
+                                <p class="card-text">Darçınlı, almalı </p>
+                                <p class="card-text"><small class="text-muted"></small></p>
                             </div>
                         </div>
                     </div>
@@ -138,8 +166,8 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Portağallı çizkeyk</h5>
-                                <p class="card-text">Dadlı. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <p class="card-text"></p>
+                                <p class="card-text"><small class="text-muted"></small></p>
                             </div>
                         </div>
                         <div class="card">
@@ -149,9 +177,8 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Şokoladlı çizkeyk</h5>
-                                <p class="card-text">This card has supporting text below as a natural lead-in to
-                                    additional content.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <p class="card-text"></p>
+                                <p class="card-text"><small class="text-muted"></small></p>
                             </div>
                         </div>
                         <div class="card">
@@ -161,10 +188,8 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Çiyələkli çizkeyk</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This card has even longer content than the first to
-                                    show that equal height action.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <p class="card-text"></p>
+                                <p class="card-text"><small class="text-muted"></small></p>
                             </div>
                         </div>
                     </div>

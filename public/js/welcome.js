@@ -137,6 +137,53 @@ var pswpElement = document.querySelectorAll(".pswp")[0],
         w: 1200,
         h: 900
     }],
+    cupcake1 =[{
+        src: "https://instagram.fgyd6-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/146263736_100312038738057_1553917154071211534_n.jpg?tp=1&_nc_ht=instagram.fgyd6-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=NF3DjhkIHCUAX-_PB7I&oh=945302d5b5c0d4e8c29322e6807bc87e&oe=6070BC0A",
+        w: 1200,
+        h: 900
+    },{
+        src: "https://instagram.fgyd6-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/145647215_2802440423328826_1805240595989746672_n.jpg?tp=1&_nc_ht=instagram.fgyd6-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=8Mo_-bocbi0AX_bZTtD&oh=deb4d28fafc422d5ae828941b1e2793f&oe=607166C2",
+        w: 1200,
+        h: 900     
+    },{
+        src: "https://instagram.fgyd6-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/145838733_137369524808302_4129957921267915528_n.jpg?tp=1&_nc_ht=instagram.fgyd6-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=Za6a_BHrKKwAX_HbF5c&oh=2a00f6df41a8ee04847316430d3292b8&oe=60709F67",
+        w: 1200,
+        h: 900     
+    },{
+        src: "https://instagram.fgyd6-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/145814631_180149217236023_5709048928121329312_n.jpg?tp=1&_nc_ht=instagram.fgyd6-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=UWghneylAVoAX_80RLI&oh=cc4138251623e848729e98b265933e17&oe=6070998E",
+        w: 1200,
+        h: 900     
+    }],
+    cupcake2 =[{
+        src: "https://instagram.fgyd6-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/129764168_116425046959537_8077134991116399044_n.jpg?tp=1&_nc_ht=instagram.fgyd6-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=IfKjpw01880AX_n2dD-&oh=5280a484ddc1be602914178d1af84d21&oe=6071A479",
+        w: 1200,
+        h: 900
+    },{
+        src: "https://instagram.fgyd6-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/129713014_398844214573499_5666008713016283868_n.jpg?tp=1&_nc_ht=instagram.fgyd6-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=mpcAj__-UxMAX_juSd4&oh=3fa442a6af5044d0255b884ef31c9b80&oe=60714AD8",
+        w: 1200,
+        h: 900     
+    },{
+        src: "https://instagram.fgyd6-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/129373298_382048179717400_4043507473473191857_n.jpg?tp=1&_nc_ht=instagram.fgyd6-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=k4dDv_-C2P8AX9C-O3b&oh=ffc2d3cf4adbed742e58ab8d09c3b3af&oe=607237A7",
+        w: 1200,
+        h: 900            
+    }],
+    cupcake3 =[{
+        src: "https://instagram.fgyd6-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/123416163_361211471623140_8377895987371336777_n.jpg?tp=1&_nc_ht=instagram.fgyd6-1.fna.fbcdn.net&_nc_cat=100&_nc_ohc=Li1SkuEYEoIAX8omyGI&oh=b97a6cbd162c79a7f3df76bcd36b43e6&oe=607003DF",
+        w: 1200,
+        h: 900
+    },{
+        src: "https://instagram.fgyd6-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/123528048_1063603817396460_6465873890664128831_n.jpg?tp=1&_nc_ht=instagram.fgyd6-1.fna.fbcdn.net&_nc_cat=100&_nc_ohc=USczkeZ2Z4sAX-NpD_5&oh=9e0a0e00c53a3ffb57016a0a0bfc2afb&oe=6071359C",
+        w: 1200,
+        h: 900     
+    },{
+        src: "https://instagram.fgyd6-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/123443300_673008360020616_6836201224256807475_n.jpg?tp=1&_nc_ht=instagram.fgyd6-1.fna.fbcdn.net&_nc_cat=100&_nc_ohc=OvrIhgSmWd0AX8JLX0B&oh=0c2bdbf41391e83e6362b6722d56afb5&oe=606FE07E",
+        w: 1200,
+        h: 900    
+    },{
+        src: "https://instagram.fgyd6-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/123376256_3451152994973254_2227190102897980201_n.jpg?tp=1&_nc_ht=instagram.fgyd6-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=fIzmUXhe3jkAX8kWFNs&oh=ec3c147383a4267167820c28b522b2ec&oe=60712667",
+        w: 1200,
+        h: 900    
+    }],    
     ekler = [{
         src: "https://instagram.fgyd6-1.fna.fbcdn.net/v/t51.2885-15/e35/154780182_275626787565239_8278515977738468395_n.jpg?tp=1&_nc_ht=instagram.fgyd6-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=tUAH4UMC_NwAX_QLjad&oh=2dc3a74f77d47370f06968bbe5d021f2&oe=6062BDB9",
         w: 1200,
@@ -228,7 +275,13 @@ $(".dovsanTort").on("click", function () {
     new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, spartakTort, options).init()
 }), $(".yeniIlTort2021").on("click", function () {
     new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, yeniIlTort2021, options).init()
-}), $(".ekler").on("click", function () {
+}),$(".cupcake1").on("click", function () {
+    new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, cupcake1, options).init()
+}),$(".cupcake2").on("click", function () {
+    new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, cupcake2, options).init()
+}),$(".cupcake3").on("click", function () {
+    new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, cupcake3, options).init()
+}),$(".ekler").on("click", function () {
     new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, ekler, options).init()
 }), $(".gilemeyveliPiroq").on("click", function () {
     new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, gilemeyveliPiroq, options).init()
