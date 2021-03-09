@@ -130,10 +130,24 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'senderName' => [
+            'max' => 'Ad 30 hərfdən çox olmamalıdır',
+            'min' => 'Ad ən azı 3 hərfdən ibarət olmalıdır',
+            'required' => 'Ad boşluğunu doldurun'
         ],
+        'senderEmailName' => [
+            'max' => 'E-poçt adresi 40 hərfdən çox olmamalıdır',
+            'email' => 'E-poçt adresi @ işarəsindən ibarət olmalıdır',
+            'required' => 'E-poçt boşluğunu doldurun'
+        ],
+        'senderText' => [
+            'max' => 'Mesajınız 255 hərflik limiti keçib',
+            'min' => 'Mesajınız ən azı 10 hərfdən ibarət olmalıdır',
+            'required' => 'Mesaj boşluğunu doldurun'
+        ],
+        
     ],
+
 
     /*
     |--------------------------------------------------------------------------

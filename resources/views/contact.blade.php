@@ -8,42 +8,69 @@
             <h3 class="text-center">Əlaqə</h3>
 
             <form action="/elaqe" method="POST" class="mt-4" id="contactForm">
+                @csrf
 
                 <div class="mt-2">
                     <label class="form-label" for="contactName"><strong>Adınız :</strong></label>
-                    <input class="form-control" style="box-shadow:none;" type="text" name="senderName" id="contactName"
+                    <input class="form-control " style="box-shadow:none;" type="text" name="senderName" id="contactName"
                         placeholder="Adınız" title="Zəhmət olmasa boşluğu doldurun" value="{{old('contactName')}}"
                         required>
-                    <div>{{$errors->first('contactName')}}</div>
+
+                    @error('senderName')
+
+                    <div class="alert alert-danger">{{ $message }}</div>
+
+                    @enderror
                 </div>
 
                 <div class="mt-2">
                     <label class="form-label" for="contactEmail"><strong>E-poçt :</strong></label>
-                    <input class="form-control" style="box-shadow:none;" type="email" name="senderEmailName"
-                        id="contactEmail" placeholder="E-poçt ünvan" title="Zəhmət olmasa boşluğu doldurun"
-                        value="{{old('contactEmail')}}" required>
-                    <div>{{$errors->first('contactEmail')}}</div>
+                    <input class="form-control @error('contactEmail') is-invalid @enderror" style="box-shadow:none;"
+                        type="email" name="senderEmailName" id="contactEmail" placeholder="E-poçt ünvan"
+                        title="Zəhmət olmasa boşluğu doldurun" value="{{old('contactEmail')}}" required>
+
+                    @error('senderEmailName')
+
+                    <div class="alert alert-danger">{{ $message }}</div>
+
+                    @enderror
+
                 </div>
 
                 <div class="mt-2">
                     <label for="emailMessage"><strong> Mesajınız :</strong></label>
-                    <textarea class="form-control" id="emailMessage" placeholder="Yaz" rows="7"
-                        style="resize:none; box-shadow:none;" name="senderText" value="{{old('emailMessage')}}"
-                        required></textarea>
-                    <div>{{$errors->first('emailMessage')}}</div>
+                    <textarea class="form-control @error('emailMessage') is-invalid @enderror" id="emailMessage"
+                        placeholder="Yaz" rows="7" style="resize:none; box-shadow:none;" name="senderText"
+                        value="{{old('emailMessage')}}" required></textarea>
+
+                    @error('senderText')
+
+                    <div class="alert alert-danger">{{ $message }}</div>
+
+                    @enderror
+
                 </div>
 
-                @csrf
+                {{-- @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                    <div class="alert alert-danger" role="alert">
+                        {{$error}}
+        </div>
+        @endforeach
 
-                <div class="flex-column mt-4">
-                    <button class="btn btn-email-send btn-lg text-light" type="submit">Göndər</button>
-                </div>
+        @endif --}}
 
-            </form>
 
+
+        <div class="flex-column mt-4">
+            <button class="btn btn-email-send btn-lg text-light" type="submit">Göndər</button>
         </div>
 
+        </form>
+
     </div>
+
+</div>
 
 </div>
 

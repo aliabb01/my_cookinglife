@@ -20,9 +20,9 @@ class ContactFormController extends Controller
 
         //Validation on Backend
         $data = request()->validate([
-            'senderName' => 'required',
-            'senderEmailName' => 'required|email',
-            'senderText' => 'required',
+            'senderName' => 'required|min:3|max:30',
+            'senderEmailName' => 'required|email|max:40',
+            'senderText' => 'required|min:10|max:255',
         ]);
 
         //Send an email
