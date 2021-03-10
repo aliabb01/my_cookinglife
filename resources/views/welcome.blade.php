@@ -2,13 +2,17 @@
 @section('content')
 
 <div class="flex-center position-ref full-height main-container">
-
+    
     <div class="container pt-5 mt-5">
-        <div class="jumbotron">
-            <h3 id="nameAuthor"></h3>
+        <div class="jumbotron shadow-lg welcomeContainer">
+            <div class="bg-danger bannerLeft">
+               
+            </div>
+            <h3 class="text-center" id="nameAuthor"></h3>
             <p><code></code></p>
         </div>
     </div>
+
 
     <div class="container text-center">
         <div role="tabpanel">
@@ -115,7 +119,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="tab-pane" id="keksler" role="tabpanel">
 
                     <div class="card-deck">
@@ -200,7 +204,6 @@
         </div>
     </div>
 
-
     <!-- Root element of PhotoSwipe. Must have class pswp. -->
     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
@@ -268,7 +271,17 @@
 
     </div>
 
+    <div class="container-fluid jumbotron mb-0" loading="lazy">
 
+        <h3 id="reservationSentence" class="text-center"></h3>
+        <p></p>
+        <p class="text-center">Sifariş etmək üçün əlaqə nömrəsindən istifadə edin</p>
+        <p class="text-center">Çatdırılma yoxdur!</p>
+
+        
+    </div>
+
+    
 
 </div>
 @endsection

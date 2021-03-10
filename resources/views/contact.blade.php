@@ -63,7 +63,7 @@
 
 
         <div class="flex-column mt-4">
-            <button class="btn btn-email-send btn-lg text-light" type="submit">Göndər</button>
+            <button class="btn btn-email-send btn-lg text-light" type="submit">Göndər</button> 
         </div>
 
         </form>
