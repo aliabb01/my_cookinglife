@@ -22,6 +22,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com/css?family=Nunito">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
@@ -31,17 +32,16 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EB0QDTG7KE"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'G-EB0QDTG7KE');
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-EB0QDTG7KE');
     </script>
 
 </head>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-color shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-color shadow-sm navigationBar">
             <div class="container">
                 <a class="brandName" href="/">
                     MyCookingLife
@@ -55,9 +55,9 @@ gtag('config', 'G-EB0QDTG7KE');
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav m-3">
-                        <li class="nav-item"><a href="/ev" class="nav-link">Ana Səhifə</a> </li>
-                        <li class="nav-item"><a href="" class="nav-link">Haqqımızda</a></li>
-                        <li class="nav-item dropdown bottom-line">
+                        <li class="{{ Request::is('ev') ? 'active' : '' }}"><a href="/ev" class="nav-link">Ana Səhifə</a> </li>
+                        <li class="{{ Request::is('haqqimizda') ? 'active' : '' }}"><a href="" class="nav-link">Haqqımızda</a></li>
+                        <li class="dropdown bottom-line">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 Şirniyyatlar
@@ -81,7 +81,7 @@ gtag('config', 'G-EB0QDTG7KE');
                                 </a>
                             </div>
                         </li>
-                        <li class="nav-item"><a href="/elaqe" class="nav-link">Əlaqə</a></li>
+                        <li class="nav-item {{ Request::is('elaqe') ? 'active' : '' }}"><a href="/elaqe" class="nav-link">Əlaqə</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -130,7 +130,10 @@ gtag('config', 'G-EB0QDTG7KE');
             <div id="emailAlert">
 
 
-                <div class="alert success-div" style="background-color:#B5EBCC;" role="alert">
+                <div class="alert success-div shadow-lg" style="background-color:#B5EBCC;" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                     <div class="row">
 
                         <svg width="75" height="75" xmlns="http://www.w3.org/2000/svg">
@@ -168,6 +171,7 @@ gtag('config', 'G-EB0QDTG7KE');
                     </div>
 
                     <span id="alertProgress"></span>
+
 
                 </div>
 

@@ -68,7 +68,7 @@
 <div class="container-fluid bg-footer text-light pt-5 pb-5 mt-auto">
     <div class="row">
         <div class="col-md-3 footer-columns">
-            <h3>MyCookingLife</h3>
+            <h3 class="brandName">MyCookingLife</h3>
             <p>Ləzzət buradan başlayır!</p>
         </div>
         <div class="col-md-3 footer-columns">
