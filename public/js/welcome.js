@@ -1,9 +1,9 @@
-var progressOptions = { //Options for the progressBar
-    id: 'top-progress-bar',
-    color: '#03a1fc', //#0F308F
-    height: '5px',
-    duration: 2
-}
+// var progressOptions = { //Options for the progressBar
+//     id: 'top-progress-bar',
+//     color: '#03a1fc', //#0F308F
+//     height: '5px',
+//     duration: 2
+// }
 
 var alertProgressOptions = { // Options for progressBar of email alert 
     id: 'bottom-progress-bar',
@@ -13,7 +13,7 @@ var alertProgressOptions = { // Options for progressBar of email alert
     position: 'bottom'
 }
 
-var progressBar = new ToProgress(progressOptions); //progressBar initialization
+// var progressBar = new ToProgress(progressOptions); //progressBar initialization
 
 var alertProgress = new ToProgress(alertProgressOptions, ("#alertProgress")); //alertProgress initialization
 
@@ -36,14 +36,14 @@ if ($("#emailAlert").is(":visible")) { //if the alert box is visible then run th
     }, 4000);
 }
 
-$(window).on("beforeunload", function () {
-    progressBar.increase(100);
+// $(window).on("beforeunload", function () {
+//     progressBar.increase(100);
 
-});
+// });
 
-$("a").on("click", function () {
-    progressBar.reset();
-});
+// $("a").on("click", function () {
+//     progressBar.reset();
+// });
 
 $(function () {
     $('[data-toggle="tooltip"]').tooltip();

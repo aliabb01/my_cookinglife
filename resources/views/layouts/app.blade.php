@@ -55,8 +55,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav m-3">
-                        <li class="{{ Request::is('ev') ? 'active' : '' }}"><a href="/ev" class="nav-link">Ana Səhifə</a> </li>
-                        <li class="{{ Request::is('haqqimizda') ? 'active' : '' }}"><a href="" class="nav-link">Haqqımızda</a></li>
+                        <li class="{{ Request::is('ev') ? 'active' : '' }}"><a href="/ev" class="nav-link">Ana
+                                Səhifə</a> </li>
+                        <li class="{{ Request::is('haqqimizda') ? 'active' : '' }}"><a href=""
+                                class="nav-link">Haqqımızda</a></li>
                         <li class="dropdown bottom-line">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -81,7 +83,8 @@
                                 </a>
                             </div>
                         </li>
-                        <li class="nav-item {{ Request::is('elaqe') ? 'active' : '' }}"><a href="/elaqe" class="nav-link">Əlaqə</a></li>
+                        <li class="nav-item {{ Request::is('elaqe') ? 'active' : '' }}"><a href="/elaqe"
+                                class="nav-link">Əlaqə</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -172,7 +175,6 @@
 
                     <span id="alertProgress"></span>
 
-
                 </div>
 
             </div>
@@ -194,7 +196,7 @@
 
     <script src="https://kit.fontawesome.com/d02e083562.js" crossorigin="anonymous"></script>
 
-
+    <script src="https://unpkg.com/turbolink"></script>
 
     <!-- Photoswipe links -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js"
