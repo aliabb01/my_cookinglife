@@ -194,9 +194,11 @@
     <script src="js/progress.js" defer></script>
     <script src="js/welcome.js" defer></script>
 
+    <script src="https://unpkg.com/turbolink"></script>
+
     <script src="https://kit.fontawesome.com/d02e083562.js" crossorigin="anonymous"></script>
 
-    <script src="https://unpkg.com/turbolink"></script>
+    
 
     <!-- Photoswipe links -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js"
