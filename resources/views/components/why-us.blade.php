@@ -52,7 +52,7 @@
     }
 </style>
 
-<section class="why-us-cont" style="display:grid; place-items:center;">
+<div class="why-us-cont" style="display:grid; place-items:center;">
 
     <div class="text-center">
         <p class="why-us-text"> Niyə biz?</p>
@@ -112,4 +112,4 @@
 
     <div class=""></div>
 
-</section>
+</div>
