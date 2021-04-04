@@ -167,7 +167,8 @@
         @endif
 
         <br>
-        {{ request()->ip() }} 
+        request()->getClientIp() is :
+        {{ request()->getClientIp()}}
     </div>
 
 </div>

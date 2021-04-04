@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LocationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +30,5 @@ Route::get('elaqe', 'ContactFormController@create');
 
 Route::post('elaqe', 'ContactFormController@store');
 
+Route::get('sud', [LocationController::class, 'index']);
 
