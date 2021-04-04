@@ -28,8 +28,7 @@ class AppServiceProvider extends ServiceProvider
     {
         // Geolocation data 
         
-        $locationData = Location::get();
-        View::share('locationData', $locationData); 
+        
         //echo($locationData->countryName);
         //dd($locationData);
     }
