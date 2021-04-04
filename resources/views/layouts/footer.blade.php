@@ -165,8 +165,7 @@
         @else
         IP Address is not shown in local environment
         @endif
-
-
+        
         <br>
         YOUR IP:
         {{ $locationData->ip }}
