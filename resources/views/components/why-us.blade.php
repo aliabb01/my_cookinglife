@@ -34,25 +34,9 @@
         z-index: 1;
         height: 100%;
     }
-
-    .bg-white {
-        background-color:#fff;
-    }
-
-    .bg-primary {
-        background-color: #3490dc;
-    }
-
-    .bg-danger {
-        background-color: #e3342f;
-    }
-
-    .bg-success {
-        background-color: #38c172;
-    }
 </style>
 
-<div class="why-us-cont" style="display:grid; place-items:center;">
+<section class="why-us-cont" style="display:grid; place-items:center;">
 
     <div class="text-center">
         <p class="why-us-text"> Niyə biz?</p>
@@ -69,7 +53,7 @@
                         <img class="" src="/images/svg/customer_satisfaction.svg" alt="" width="100%" height="auto">
                     </div>
 
-                    <div class="card-body" style="">
+                    <div class="card-body" style="float: bottom;">
                         <p class="card-title" style="font-size:1.2rem;">Müştəri məmnuniyyəti</p>
                     </div>
                 </div>
@@ -112,4 +96,4 @@
 
     <div class=""></div>
 
-</div>
+</section>
