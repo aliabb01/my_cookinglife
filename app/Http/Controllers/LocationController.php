@@ -9,7 +9,8 @@ class LocationController extends Controller
 {
     public function index(Request $request)
     {
-        $ip = $request->getClientIp();
+        $var = request()->ip();
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
         $data = Location::get($ip);
         dd($data);
     }
