@@ -174,6 +174,9 @@
         <br>
         YOUR COUNTRY:
         {{ $locationData->countryName }}
+
+        <br>
+        {{-- {{ request()->ip() }} --}}
     </div>
 
 </div>
