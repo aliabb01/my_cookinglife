@@ -9,7 +9,9 @@ class GeoLocationController extends Controller
 {
     public function index(Request $request)
     {
-        $locationData = Location::get($request->ip());
+        $locationData = Location::get();
+        $userIP = $request->ip();
+        $locationData->ip = $request->ip();   
         dd($locationData);
     }
 }
