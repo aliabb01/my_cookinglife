@@ -169,6 +169,13 @@
         <br>
         request()->getClientIp() is :
         {{ request()->getClientIp()}}
+
+        <br>
+        Your IP Address is : {{ $locationData->ip }}
+
+        <br>
+
+        Your connection is from : {{ $locationData->countryName }}
     </div>
 
 </div>
