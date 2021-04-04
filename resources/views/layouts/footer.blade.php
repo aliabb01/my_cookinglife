@@ -81,6 +81,20 @@
         box-shadow: none;
         -webkit-box-shadow: none;
     }
+
+    /* Bootstrap fixes */
+
+    .p-2{
+        padding:.5rem;
+    }
+
+    .pl-3{
+        padding-left:1rem;
+    }
+
+
+
+
 </style>
 
 
@@ -147,7 +161,7 @@
 
     </div>
 
-    <div class="container">Your IP address is :
+    <div class="container text-center">Your IP address is :
         {{ 
             $_SERVER['HTTP_X_FORWARDED_FOR']
         }}
