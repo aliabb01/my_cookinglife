@@ -9,8 +9,10 @@ class LocationController extends Controller
 {
     public function index(Request $request)
     {
-        $userIp = request()->getClientIp();
-        $locationData = Location::get($userIp);
+        $userIp = request()->getHost();
+        $locationData = Location::get((string)$userIp);
+        //$locationData = Location::get($a);
+        echo((string)$userIp);
         dd($locationData);
     }
 }
