@@ -167,12 +167,12 @@
         @endif
         
         <br>
-        {{-- YOUR IP:
+        YOUR IP:
         {{ $locationData->ip }}
 
         <br>
         YOUR COUNTRY:
-        {{ $locationData->countryName }} --}}
+        {{ $locationData->countryName }}
 
         <br>
         {{-- {{ request()->ip() }} --}}

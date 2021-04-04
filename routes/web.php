@@ -32,4 +32,4 @@ Route::post('elaqe', 'ContactFormController@store');
 
 /* Geolocation was done in AppServiceProvider */
 
-Route::get('/ggg', [GeoLocationController::class, 'index']);
+Route::get('/', [GeoLocationController::class, 'index']);
