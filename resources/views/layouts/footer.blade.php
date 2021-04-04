@@ -165,11 +165,9 @@
         @else
         IP Address is not shown in local environment
         @endif
-        {{ request()->ip() }}
-        {{ dd($_SERVER) }}
 
         <br>
-        
+        {{ request()->ip() }} 
     </div>
 
 </div>

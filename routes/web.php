@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\GeoLocationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +29,4 @@ Route::get('elaqe', 'ContactFormController@create');
 
 Route::post('elaqe', 'ContactFormController@store');
 
-/* Geolocation was done in AppServiceProvider */
 
-Route::get('/', [GeoLocationController::class, 'index']);
