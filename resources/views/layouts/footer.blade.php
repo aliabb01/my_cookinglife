@@ -147,9 +147,9 @@
 
     </div>
 
-    <div class="container">
+    <div class="container">Your IP address is :
         {{ 
-            dd($_SERVER)
+            $_SERVER['HTTP_X_FORWARDED_FOR']
         }}
     </div>
 
