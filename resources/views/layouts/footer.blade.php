@@ -84,17 +84,13 @@
 
     /* Bootstrap fixes */
 
-    .p-2{
-        padding:.5rem;
+    .p-2 {
+        padding: .5rem;
     }
 
-    .pl-3{
-        padding-left:1rem;
+    .pl-3 {
+        padding-left: 1rem;
     }
-
-
-
-
 </style>
 
 
@@ -161,10 +157,14 @@
 
     </div>
 
-    <div class="container text-center">Your IP address is :
-        {{ 
-            $_SERVER['HTTP_X_FORWARDED_FOR']
-        }}
+    <div class="mt-5">
+        @if (App::environment('production'))
+        Your IP address is :
+            {{ $_SERVER['HTTP_X_FORWARDED_FOR'] }}
+
+        @else
+        IP Address is not shown in local environment
+        @endif
     </div>
 
 </div>
