@@ -65,8 +65,8 @@ body {
 }
 
 
-/**
- * Animate collapse open into hamburger menu
+/*
+ Animate collapse open into hamburger menu
  */
 
 /* top line moves back to initial position and rotates back to 0 degrees */
@@ -82,8 +82,8 @@ body {
     transform: translate(0%, 0%) rotate(0deg) ;
 }
 
-/**
- * Animate collapse into X.
+/*
+ Animate collapse into X.
  */
 
 /* top line rotates 45 degrees clockwise and moves up and in a bit to close the center of the X in the center of the button */

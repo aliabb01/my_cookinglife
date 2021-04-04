@@ -33,6 +33,7 @@
         transition: 0.5s;
         z-index: 1;
         height: 100%;
+        background-color:white;
     }
 </style>
 
