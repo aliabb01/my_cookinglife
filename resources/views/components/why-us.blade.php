@@ -34,6 +34,27 @@
         z-index: 1;
         height: 100%;
     }
+
+    .bg-primary{
+        background-color:#3490dc;
+    }
+
+    .bg-white{
+        background-color:#fff;
+    }
+
+    .bg-success{
+        background-color:#38c172;
+    }
+    
+    .pt-2{
+        padding-top:.5rem;
+    }
+
+    .pb-2{
+        padding-bottom:.5rem;
+    }
+
 </style>
 
 

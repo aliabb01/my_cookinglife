@@ -149,7 +149,7 @@
 
     <div class="container">
         {{ 
-            Request::ip()
+            dd($_SERVER)
         }}
     </div>
 
