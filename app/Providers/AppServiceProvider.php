@@ -31,6 +31,6 @@ class AppServiceProvider extends ServiceProvider
         $locationData = Location::get($userIP);
         View::share('locationData', $locationData); 
         //echo($locationData->countryName);
-        dd($locationData);
+        //dd($locationData);
     }
 }
