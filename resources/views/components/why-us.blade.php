@@ -33,7 +33,22 @@
         transition: 0.5s;
         z-index: 1;
         height: 100%;
-        background-color:white;
+    }
+
+    .bg-white {
+        background-color:#fff;
+    }
+
+    .bg-primary {
+        background-color: #3490dc;
+    }
+
+    .bg-danger {
+        background-color: #e3342f;
+    }
+
+    .bg-success {
+        background-color: #38c172;
     }
 </style>
 
@@ -54,7 +69,7 @@
                         <img class="" src="/images/svg/customer_satisfaction.svg" alt="" width="100%" height="auto">
                     </div>
 
-                    <div class="card-body" style="float: bottom;">
+                    <div class="card-body" style="">
                         <p class="card-title" style="font-size:1.2rem;">Müştəri məmnuniyyəti</p>
                     </div>
                 </div>
