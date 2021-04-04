@@ -19,5 +19,6 @@ class LocationController extends Controller
         }
         $locationData = Location::get($ip);
         view()->share('locationData', $locationData);
+        return view('/welcome');
     }
 }
