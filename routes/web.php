@@ -30,5 +30,6 @@ Route::get('elaqe', 'ContactFormController@create');
 
 Route::post('elaqe', 'ContactFormController@store');
 
+Route::get('/', [LocationController::class, 'index']);
 //Route::get('sud', [LocationController::class, 'index']);
 
