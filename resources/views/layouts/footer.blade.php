@@ -160,22 +160,18 @@
     <div class="mt-5">
         @if (App::environment('production'))
         Your IP address is :
-            {{ $_SERVER['HTTP_X_FORWARDED_FOR'] }}
+        {{ $_SERVER['HTTP_X_FORWARDED_FOR'] }}
+
+        {{-- Your IP Address is : {{ $locationData->ip }} --}}
 
         @else
-        IP Address is not shown in local environment
-        @endif
-
-        <br>
-        request()->getClientIp() is :
-        {{ request()->getClientIp()}}
-
-        <br>
         Your IP Address is : {{ $locationData->ip }}
+        @endif
 
         <br>
 
         Your connection is from : {{ $locationData->countryName }}
     </div>
+
 
 </div>
