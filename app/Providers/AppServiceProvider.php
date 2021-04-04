@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         // Geolocation data 
-        $userIP = request()->ip();
+        $userIP = $_SERVER['HTTP_X_FORWARDED_FOR'];
         $locationData = Location::get($userIP);
         View::share('locationData', $locationData); 
         //echo($locationData->countryName);
