@@ -5,7 +5,8 @@
     }
 
     .bg-footer {
-        background-color: #350b40;
+        background: rgb(53, 11, 64);
+        background: linear-gradient(90deg, rgba(53, 11, 64, 1) 0%, rgba(8, 5, 93, 1) 100%);
     }
 
     a {
@@ -62,6 +63,24 @@
         cursor: pointer;
         transition: 0.3s;
     }
+
+    .btn-primary-gradient {
+        background: rgb(33, 200, 246);
+        background: linear-gradient(86deg, rgba(33, 200, 246, 1) 0%, rgba(99, 123, 255, 1) 100%);
+        color: white;
+    }
+
+    .btn-primary-gradient:hover {
+        background: rgb(244, 72, 129);
+        background: linear-gradient(86deg, rgba(244, 72, 129, 1) 0%, rgba(236, 69, 79, 1) 100%);
+        color: white;
+        transition: 0.5s;
+    }
+
+    .btn-primary-gradient:focus {
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
 </style>
 
 
@@ -110,6 +129,28 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="container mt-5 text-center" style="">
+
+        <label class="mr-1" for="mailing-list">Email siyahımıza abunə olun :</label>
+
+        <div class="" style="position: relative; display:inline-block; justify-content:center;">
+
+            <input placeholder="E-poçt ünvanınız" type="email" name="mailing-list" id="mailing-list" class="p-2 pl-3"
+                style="border-radius: 25px; width: 300px; border:none; outline: none;">
+            <button type="submit" class="btn btn-primary-gradient"
+                style="position:absolute; right:-30px; border-radius:25px; border:none; padding:8px; padding-right:15px; padding-left:15px;">Abunə
+                ol</button>
+
+        </div>
+
+    </div>
+
+    <div class="container">
+        {{ 
+            Request::ip()
+        }}
     </div>
 
 </div>
