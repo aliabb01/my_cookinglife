@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/', [LocationController::class, 'index']);
+
 Auth::routes();
 
 /*Route::get('/ev', 'HomeController@index')->name('welcome');*/
@@ -30,6 +32,6 @@ Route::get('elaqe', 'ContactFormController@create');
 
 Route::post('elaqe', 'ContactFormController@store');
 
-Route::get('/', [LocationController::class, 'index']);
+
 //Route::get('sud', [LocationController::class, 'index']);
 
