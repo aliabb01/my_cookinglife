@@ -28,6 +28,12 @@
     <link href="/css/app.css" rel="stylesheet">
     <link href="/css/welcome.css" rel="stylesheet">
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EB0QDTG7KE"></script>
     <script>
@@ -184,6 +190,8 @@
             @endif
         </div>
 
+
+
         <main class="">
             @yield('content')
         </main>
@@ -200,7 +208,8 @@
 
     <script src="https://kit.fontawesome.com/d02e083562.js" crossorigin="anonymous"></script>
 
-    
+    <!-- JavaScript -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
     <!-- Photoswipe links -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js"
@@ -215,7 +224,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.css"
         integrity="sha512-QwSfZXX2w9SDWSNBKpEos673LXajTJpYKwtG+zJNP9zHsgRrWtNSx1gKVyB6qWUP4wJ0Hfnk9KJzrB6IKrXmEQ=="
         crossorigin="anonymous" />
-        
+
+    @if ($locationData->countryName !== 'Azerbaijan')
+        <script>
+            alertify.message("Good day. As we noticed you are from {!! $locationData->countryName !!}. We do not offer services in {!! $locationData->countryName !!} yet.");
+        </script>
+    @endif
+
 </body>
 
 </html>

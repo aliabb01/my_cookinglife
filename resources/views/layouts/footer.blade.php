@@ -93,7 +93,6 @@
     }
 </style>
 
-
 <div class="container-fluid bg-footer text-light pt-5 pb-5 mt-auto">
     <div class="row">
         <div class="col-md-3 footer-columns">
@@ -157,7 +156,7 @@
 
     </div>
 
-    <div class="mt-5">
+    <div class="mt-5" style="position: relative;">
         @if (App::environment('production'))
         Your IP address is :
         {{ $_SERVER['HTTP_X_FORWARDED_FOR'] }}
@@ -171,7 +170,7 @@
         <br>
 
         Your connection is from : {{ $locationData->countryName }}
-    </div>
 
+    </div>
 
 </div>
