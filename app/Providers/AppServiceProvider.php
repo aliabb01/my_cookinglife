@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
     {
         // Geolocation data
         if (App::environment('production')) {
-            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+            $ip = getenv('HTTP_X_FORWARDED_FOR');
         }
         else{
             //echo('This is a random ip address assigned, because you cannot check for ip locally');

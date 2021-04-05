@@ -14,11 +14,13 @@ use App\Http\Controllers\LocationController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/', [LocationController::class, 'index']);
+
+// Route::any('/', [LocationController::class, 'index']);
+
+Route::get('/', function () {
+    return view('welcome');   
+});
 
 Auth::routes();
 
