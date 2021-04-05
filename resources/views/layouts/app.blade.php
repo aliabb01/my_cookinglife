@@ -243,7 +243,7 @@
                         sleep(5000).then(() => {
                             alertify.notify("Good day. As we noticed, you joined from {!! $locationData->countryName !!}. We do not offer services in {!! $locationData->countryName !!} yet.", "warning", 10) 
                             sleep(10000).then(() => {
-                                alertify.notify("Sign Up to the newsletter to get notified when our services will be available in {!! $locationData->countryName !!}, , {{ $locationData->cityName }}", "warning", 5)
+                                alertify.notify("Sign Up to the newsletter to get notified when our services will be available in {!! $locationData->countryName !!}, {{ $locationData->cityName }}", "warning", 10)
                             });
                         });                        
             </script>
