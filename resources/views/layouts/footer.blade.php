@@ -169,7 +169,7 @@
 
         <br>
 
-        Your connection is from : {{ $locationData->countryName }}
+        Your connection is from : {{ $locationData->countryName }}, {{ $locationData->cityName }}
 
     </div>
 

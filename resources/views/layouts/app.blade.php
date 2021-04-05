@@ -136,9 +136,9 @@
 
         <div class="container mt-3">
 
-            @if (Session::has('elaqe'))
+            {{-- @if (Session::has('elaqe')) --}}
             <!-- If session is contact session then show an alert -->
-            <div id="emailAlert">
+            {{-- <div id="emailAlert">
 
 
                 <div class="alert success-div shadow-lg" style="background-color:#B5EBCC;" role="alert">
@@ -185,9 +185,9 @@
 
                 </div>
 
-            </div>
+            </div> --}}
 
-            @endif
+            {{-- @endif --}}
         </div>
 
 
@@ -225,11 +225,39 @@
         integrity="sha512-QwSfZXX2w9SDWSNBKpEos673LXajTJpYKwtG+zJNP9zHsgRrWtNSx1gKVyB6qWUP4wJ0Hfnk9KJzrB6IKrXmEQ=="
         crossorigin="anonymous" />
 
-    @if ($locationData->countryName !== 'Azerbaijan')
-        <script>
-            alertify.message("Good day. As we noticed you are from {!! $locationData->countryName !!}. We do not offer services in {!! $locationData->countryName !!} yet.");
-        </script>
+
+    <!-- Alertify notifications-->
+
+    {{-- Check if the cookie is null.
+         Therefore its first time visiting.
+         If the country does not match the selected country then
+         report back with alert message
+          --}}
+          
+    @if (Cookie::get('mycookinglife_session')==null)
+        @if ($locationData->countryName !== 'Azerbaijan')
+            <script>
+                function sleep(ms) {
+                    return new Promise(resolve => setTimeout(resolve, ms));
+                }
+                sleep(5000).then(() => {
+                    alertify.notify("Good day. As we noticed, you joined from {!! $locationData->countryName !!}. We do not offer services in {!! $locationData->countryName !!} yet.", "warning", 10) 
+                    sleep(10000).then(() => {
+                        alertify.notify("Sign Up to the newsletter to get notified when our services will be available in {!! $locationData->countryName !!}, , {{ $locationData->cityName }}", "warning", 5)
+                    });
+                });
+                
+            </script>
+        @endif
     @endif
+
+    {{-- Contact page form submission successful session --}}
+    @if (Session::has('elaqe'))
+    <script>
+        alertify.notify("{!! \Session::get('elaqe') !!}", "success", 10);        
+    </script>
+    @endif
+
 
 </body>
 

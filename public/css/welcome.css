@@ -35,8 +35,8 @@ body {
     background-color: #fca3cc;
 }
 
-.welcomeContainer{
-    position:relative;
+.welcomeContainer {
+    position: relative;
 }
 
 /* Define the shape and color of the hamburger lines */
@@ -54,8 +54,8 @@ body {
     transform-origin: center left;
 }
 
-.navbar-toggler:hover > span{
-    color:red;
+.navbar-toggler:hover>span {
+    color: red;
 }
 
 
@@ -71,15 +71,17 @@ body {
 
 /* top line moves back to initial position and rotates back to 0 degrees */
 .navbar-toggler span:nth-child(1) {
-    transform: translate(0%, 0%) rotate(0deg) ;
+    transform: translate(0%, 0%) rotate(0deg);
 }
+
 /* middle line goes back to regular color and opacity */
 .navbar-toggler span:nth-child(2) {
     opacity: 1;
 }
+
 /* bottom line goes back to initial position and rotates back to 0 degrees */
 .navbar-toggler span:nth-child(3) {
-    transform: translate(0%, 0%) rotate(0deg) ;
+    transform: translate(0%, 0%) rotate(0deg);
 }
 
 /**
@@ -90,13 +92,15 @@ body {
 .navbar-toggler:not(.collapsed) span:nth-child(1) {
     transform: translate(15%, -33%) rotate(45deg);
 }
+
 /* center line goes transparent */
 .navbar-toggler:not(.collapsed) span:nth-child(2) {
     opacity: 0;
 }
+
 /* bottom line rotates 45 degrees counter clockwise, in, and down a bit to close the center of the X in the center of the button  */
 .navbar-toggler:not(.collapsed) span:nth-child(3) {
-    transform: translate(15%, 33%) rotate(-45deg) ;
+    transform: translate(15%, 33%) rotate(-45deg);
 }
 
 
@@ -165,4 +169,15 @@ body {
 
 .btn-email-send:hover {
     background-color: rgb(231, 49, 49);
+}
+
+.ajs-message{
+    font-size: 0.9rem;
+    text-shadow: none !important;
+    border: none !important;
+    border-radius: 30px !important;
+}
+
+.ajs-success {
+    background-color: rgb(21, 168, 21) !important;
 }
