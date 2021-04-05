@@ -233,20 +233,19 @@
          If the country does not match the selected country then
          report back with alert message
           --}}
-          
+
     @if (Cookie::get('mycookinglife_session')==null)
         @if ($locationData->countryName !== 'Azerbaijan')
             <script>
                 function sleep(ms) {
-                    return new Promise(resolve => setTimeout(resolve, ms));
-                }
-                sleep(5000).then(() => {
-                    alertify.notify("Good day. As we noticed, you joined from {!! $locationData->countryName !!}. We do not offer services in {!! $locationData->countryName !!} yet.", "warning", 10) 
-                    sleep(10000).then(() => {
-                        alertify.notify("Sign Up to the newsletter to get notified when our services will be available in {!! $locationData->countryName !!}, , {{ $locationData->cityName }}", "warning", 5)
-                    });
-                });
-                
+                            return new Promise(resolve => setTimeout(resolve, ms));
+                        }
+                        sleep(5000).then(() => {
+                            alertify.notify("Good day. As we noticed, you joined from {!! $locationData->countryName !!}. We do not offer services in {!! $locationData->countryName !!} yet.", "warning", 10) 
+                            sleep(10000).then(() => {
+                                alertify.notify("Sign Up to the newsletter to get notified when our services will be available in {!! $locationData->countryName !!}, , {{ $locationData->cityName }}", "warning", 5)
+                            });
+                        });                        
             </script>
         @endif
     @endif
@@ -257,7 +256,6 @@
         alertify.notify("{!! \Session::get('elaqe') !!}", "success", 10);        
     </script>
     @endif
-
 
 </body>
 
