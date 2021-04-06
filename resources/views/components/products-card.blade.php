@@ -1,4 +1,17 @@
 <style>
+    .active{
+        transition:ease 0.5s transform 2s;
+    }
+
+    .tab-pane.fade {
+        transition: all 0.1s;
+        transform: translateY(1rem);
+    }
+
+    .tab-pane.fade.show {
+        transform: translateY(0rem);
+    }
+
     .bg-card{
         background: white;
     }
@@ -47,7 +60,7 @@
 
             </div>
 
-            <div class="tab-pane" id="cupcakeler" role="tabpanel">
+            <div class="tab-pane fade" id="cupcakeler" role="tabpanel">
                 
                 <div class="row bg-card pt-3 pb-3 text-center" style="border-radius:10px; border: 2px solid red;">
                     <div class="col">
@@ -63,7 +76,7 @@
                 
             </div>
 
-            <div class="tab-pane" id="keksler" role="tabpanel">
+            <div class="tab-pane fade" id="keksler" role="tabpanel">
 
                 <div class="row bg-card pt-3 pb-3 text-center" style="border-radius:10px; border: 2px solid red;">
                     <div class="col">
@@ -79,7 +92,7 @@
 
             </div>
 
-            <div class="tab-pane" id="cheesecakeler" role="tabpanel">
+            <div class="tab-pane fade" id="cheesecakeler" role="tabpanel">
 
                 <div class="row bg-card pt-3 pb-3 text-center" style="border-radius:10px; border: 2px solid red;">
                     <div class="col">
