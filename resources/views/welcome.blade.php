@@ -16,7 +16,7 @@
 
     <x-products-card></x-products-card>
 
-    <x-photoswipe></x-photoswipe>
+    {{-- <x-photoswipe></x-photoswipe> --}}
 
     <div class="container-fluid jumbotron jumbo-box mb-0" style="border-top: 3px solid red; border-bottom: 3px solid red;">
 
