@@ -204,29 +204,17 @@
     <script src="js/progress.js" defer></script>
     <script src="js/welcome.js" defer></script>
 
+    <!-- Tubolink -->
     <script src="https://unpkg.com/turbolink"></script>
 
+    <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/d02e083562.js" crossorigin="anonymous"></script>
 
-    <!-- Instagram embed script -->
+    <!-- Instagram embed images script -->
     <script async src="//www.instagram.com/embed.js"></script>
 
     <!-- Alertify notification JavaScript -->
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-
-    <!-- Photoswipe links -->
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js"
-        integrity="sha512-2R4VJGamBudpzC1NTaSkusXP7QkiUYvEKhpJAxeVCqLDsgW4OqtzorZGpulE3eEA7p++U0ZYmqBwO3m+R2hRjA=="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.js"
-        integrity="sha512-7jpTN4lfrURp41NL7vGXbMP+RPaf/1S5QlNMHLlkdBteN+X5znoT2P8ryCluqePOK79rpDWVPdq1+la4ijhIbQ=="
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.css"
-        integrity="sha512-/lf2y2d7SFJau+G4TGgXCWJOAUxyDmJD+Tb35CdqoMZAQ8eNX0sgDKISlcxCtGpEAuyb1Q5vGPfB1XMettf0FA=="
-        crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.css"
-        integrity="sha512-QwSfZXX2w9SDWSNBKpEos673LXajTJpYKwtG+zJNP9zHsgRrWtNSx1gKVyB6qWUP4wJ0Hfnk9KJzrB6IKrXmEQ=="
-        crossorigin="anonymous" /> --}}
 
 
     <!-- Alertify notifications-->
@@ -238,19 +226,19 @@
           --}}
 
     @if (Cookie::get('mycookinglife_session')==null)
-        @if ($locationData->countryName !== 'Azerbaijan')
-            <script>
-                function sleep(ms) {
-                            return new Promise(resolve => setTimeout(resolve, ms));
-                        }
-                        sleep(5000).then(() => {
-                            alertify.notify("Good day. As we noticed, you joined from {!! $locationData->countryName !!}. We do not offer services in {!! $locationData->countryName !!} yet.", "warning", 10) 
-                            sleep(10000).then(() => {
-                                alertify.notify("Sign Up to the newsletter to get notified when our services will be available in {!! $locationData->countryName !!}, {{ $locationData->cityName }}", "warning", 10)
-                            });
-                        });                        
-            </script>
-        @endif
+    @if ($locationData->countryName !== 'Azerbaijan')
+    <script>
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        sleep(5000).then(() => {
+            alertify.notify("Good day. As we noticed, you joined from {!! $locationData->countryName !!}. We do not offer services in {!! $locationData->countryName !!} yet.", "warning", 10) 
+            sleep(10000).then(() => {
+                alertify.notify("Sign Up to the newsletter to get notified when our services will be available in {!! $locationData->countryName !!}, {{ $locationData->cityName }}", "warning", 10)
+            });
+        });                        
+    </script>
+    @endif
     @endif
 
     {{-- Contact page form submission successful session --}}
@@ -259,6 +247,18 @@
         alertify.notify("{!! \Session::get('elaqe') !!}", "success", 10);        
     </script>
     @endif
+
+    <!-- Callbell script -->
+    <!-- Start of Async Callbell Code -->
+    <script>
+        window.callbellSettings = {
+      token: "D5EYDwrapvoxKNjirGit5cQk"
+    };
+    </script>
+    <script>
+        (function(){var w=window;var ic=w.callbell;if(typeof ic==="function"){ic('reattach_activator');ic('update',callbellSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Callbell=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://dash.callbell.eu/include/'+window.callbellSettings.token+'.js';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+    </script>
+    <!-- End of Async Callbell Code -->
 
 </body>
 

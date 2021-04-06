@@ -12,7 +12,7 @@
 
     .why-us-text {
         font-family: 'Lobster', cursive;
-        font-size: 3.5rem;
+        font-size: 3rem;
         font-weight: 800;
         letter-spacing: 5px;
         word-spacing: 5px;
