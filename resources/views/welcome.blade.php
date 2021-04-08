@@ -3,8 +3,8 @@
 
 <div class="flex-center position-ref full-height main-container">
 
-    <div class="container pt-5 mt-5">
-        <div class="jumbotron shadow-lg welcomeContainer">
+    <div class="container pt-5">
+        <div style="border: 1px solid red; border-right: 5px solid red;" class="jumbotron shadow-lg welcomeContainer mt-5">
             <div class="bg-danger bannerLeft">
 
             </div>
