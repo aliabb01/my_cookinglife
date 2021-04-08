@@ -134,7 +134,7 @@
 
 
 
-        <div class="container mt-3">
+        <div class="container">
 
             {{-- @if (Session::has('elaqe')) --}}
             <!-- If session is contact session then show an alert -->

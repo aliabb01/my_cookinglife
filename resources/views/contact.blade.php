@@ -1,10 +1,24 @@
 @extends('layouts.app')
 @section('content')
+<style>
+    .badge-light-red {
+        background-color: #F05340;
+        color: white;
+    }
 
+    .badge-green {
+        background-color: #15A815;
+        color: white;
+    }
+
+    .bg-light-gray{
+        background-color: #E9ECEF;
+    }
+</style>
 
 <div class="container mt-5 mb-5">
     <div class="row">
-        <div class="col bg-light pt-5 pb-5 pr-5 pl-5 rounded-left container-email">
+        <div class="col bg-light-gray shadow-lg pt-5 pb-5 pr-5 pl-5 rounded-left container-email">
             <h3 class="text-center">Əlaqə</h3>
 
             <form action="/elaqe" method="POST" class="mt-4" id="contactForm">
@@ -43,6 +57,8 @@
                         placeholder="Yaz" rows="7" style="resize:none; box-shadow:none;" name="senderText"
                         value="{{old('emailMessage')}}" required></textarea>
 
+                    <span style="font-size: smaller; margin-top:7px;" id="chars-left"></span>
+
                     @error('senderText')
 
                     <div class="alert alert-danger">{{ $message }}</div>
@@ -53,8 +69,8 @@
 
                 {{-- @if ($errors->any())
                 @foreach ($errors->all() as $error)
-                    <div class="alert alert-danger" role="alert">
-                        {{$error}}
+                <div class="alert alert-danger" role="alert">
+                    {{$error}}
         </div>
         @endforeach
 
@@ -107,6 +123,56 @@
 </div>
 
 
+<script>
+    var textarea = document.getElementById("emailMessage");
+
+    // window.onload = textareaLengthCheck();
+
+    textarea.addEventListener('focus', function() {
+        if(textarea.focus) {
+            document.getElementById('chars-left').style.visibility = "visible";
+            textareaLengthCheck();
+        }
+    }, false);
+    
+    function textareaLengthCheck()
+    {
+        var textareaLength = textarea.value.length;
+        var charactersLeft = 255 - textareaLength;
+        var countView = document.getElementById('chars-left');
+        countView.innerHTML = charactersLeft + " Hərf qaldı";
+
+        if(textarea.value.length < 10) {
+            var charsStill = 10 - textarea.value.length;
+            countView.innerHTML = charsStill + " Hərf daha";
+        }
+
+        // if(charactersLeft > 10) {
+        //     countView.classList.add("badge-success");
+        //     countView.classList.remove("badge-warning");
+        //     countView.classList.remove("badge-danger");
+        // }
+
+        // if(charactersLeft <= 10) {
+        //     countView.classList.add("badge-warning");
+        //     countView.classList.remove("badge-success");
+        //     countView.classList.remove("badge-danger");
+        // }
+
+        // if(charactersLeft < 0) {
+        //     countView.classList.add("badge-danger");
+        //     countView.classList.remove("badge-warning");
+        // }
+
+        // variable that gets value of the wanted classes as string and then we add it to the element by assigning className 
+        var addedClass = textarea.value.length < 10 ? "badge badge-pill badge-light-red" : charactersLeft <= 0 ? "badge badge-pill badge-light-red" : charactersLeft <= 10 ? "badge badge-pill badge-warning" : "badge badge-pill badge-green";
+        countView.className = addedClass;
+    }
+
+    textarea.addEventListener('keyup', textareaLengthCheck, false);
+    textarea.addEventListener('keydown', textareaLengthCheck, false);
+    
+</script>
+
 
 @endsection
-
