@@ -4,7 +4,7 @@
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #e73131, #e9502c, #e96829, #e87d2b, #e79031);
+    background: linear-gradient(45deg, rgba(236, 69, 79, 1) 0%, rgba(244, 72, 129, 1) 100%);
 }
 
 .brandName {
@@ -103,8 +103,6 @@
     transform: translate(15%, 33%) rotate(-45deg);
 }
 
-
-
 /*.bannerLeft{
     position:absolute;
     width:50px;
@@ -180,4 +178,9 @@
 
 .ajs-success {
     background-color: rgb(21, 168, 21) !important;
+}
+
+.ajs-info {
+    background-color: #17A2B8 !important;
+    color: white !important;
 }
