@@ -142,15 +142,22 @@
 
     <div class="container mt-5 text-center" style="">
 
-        <label class="mr-1" for="mailing-list">Email siyahımıza abunə olun :</label>
+        <label class="mr-1" for="subscribedMail">Email siyahımıza abunə olun :</label>
 
         <div class="" style="position: relative; display:inline-block; justify-content:center;">
 
-            <input placeholder="E-poçt ünvanınız" type="email" name="mailing-list" id="mailing-list" class="p-2 pl-3"
-                style="border-radius: 25px; width: 300px; border:none; outline: none;">
-            <button type="submit" class="btn btn-primary-gradient"
-                style="position:absolute; right:-30px; border-radius:25px; border:none; padding:8px; padding-right:15px; padding-left:15px;">Abunə
-                ol</button>
+            <form method="POST" action="/subscribe">
+                @csrf
+                <input placeholder="E-poçt ünvanınız" type="email" name="subscribedMail" id="subscribedMail"
+                    class="p-2 pl-3" style="border-radius: 25px; width: 300px; border:none; outline: none;" required>
+                <button type="submit" class="btn btn-primary-gradient"
+                    style="position:absolute; right:-30px; border-radius:25px; border:none; padding:8px; padding-right:15px; padding-left:15px;">Abunə
+                    ol</button>
+
+                @error('subscribedMail')
+                <div class="alert alert-danger" style="position:absolute; top:40px;">{{ $message }}</div>
+                @enderror
+            </form>
 
         </div>
 
@@ -172,5 +179,15 @@
         Your connection is from : {{ $locationData->countryName }}, {{ $locationData->cityName }}
 
     </div>
+
+    <div class="mt-5">
+        <a class="btn btn-primary" href="/commands">Refresh migration</a>
+
+
+    </div>
+
+
+    
+    
 
 </div>

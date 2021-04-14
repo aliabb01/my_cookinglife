@@ -28,6 +28,7 @@
     <link href="/css/app.css" rel="stylesheet">
     <link href="/css/welcome.css" rel="stylesheet">
 
+    <!-- Alertify Styles -->
     <!-- CSS -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
 
@@ -93,10 +94,30 @@
                         </li>
                         <li class="nav-item {{ Request::is('elaqe') ? 'active' : '' }}"><a href="/elaqe"
                                 class="nav-link">Əlaqə</a></li>
+
+
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        @auth
+                        <li class="nav-item {{ Request::is('admin') ? 'active' : '' }}"><a href="/admin"
+                                class="nav-link">Admin panel</a></li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                        </li>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+
+                        @endauth
                         <!-- Authentication Links -->
                         {{--@guest
                         <li class="nav-item">
@@ -245,6 +266,27 @@
     @if (Session::has('elaqe'))
     <script>
         alertify.notify("{!! \Session::get('elaqe') !!}", "success", 10);        
+    </script>
+    @endif
+
+    {{-- Subscribtion to mailing list --}}
+    @if (Session('subscribed'))
+    <script>
+        alertify.notify("{!! \Session::get('subscribed') !!}", "success", 10);
+    </script>
+    @endif
+
+    {{-- Subscription duplicate --}}
+    @if (Session('subscribeDuplicate'))
+    <script>
+        alertify.notify("{!! \Session::get('subscribeDuplicate') !!}", "error", 10);
+    </script>
+    @endif
+
+    {{-- Unsubscription successfull --}}
+    @if (Session('unsubscribed'))
+    <script>
+        alertify.notify("{!! \Session::get('unsubscribed') !!}", "info", 10);
     </script>
     @endif
 
