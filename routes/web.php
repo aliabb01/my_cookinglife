@@ -102,7 +102,7 @@ Route::middleware(['auth'])->group(function () {
 
     // add fake subscribers
     Route::get('/add-fake-subscribers', function () {
-        factory(App\Subscriber::class, 30)->create();
+        factory(Subscriber::class, 30)->create();
         return redirect()->back();
     })->name('operations.add-fake-subs');
 });
