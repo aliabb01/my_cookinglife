@@ -20,6 +20,7 @@
     RewriteRule ^ index.php [L]
 </IfModule>
 
+#Forces https. Fixed production error with login and register pages
 RewriteCond %{HTTPS} !=on
 RewriteCond %{HTTP:X-Forwarded-Proto} !https 
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
