@@ -39,19 +39,13 @@ Route::post('elaqe', 'ContactFormController@store');
  * Subscription Resource Routes
  */
 
-/**
- * View to show unsubscribe form for mailing list
- */
+// view to show unsubscribe form for mailing list
 Route::get('unsubscribe/{subscribedMail}', [SubscribeController::class, 'show'])->name('subscription.show');
 
-/**
- * Subscribe to mailing list routes
- */
+// subscribe to mailing list
 Route::post('subscribe', [SubscribeController::class, 'store'])->name('subscription.store');
 
-/**
- * Unsubscribe from mailing list
- */
+// unsubscribe from mailing list
 Route::delete('unsubscribe/{subscribedMail}', [SubscribeController::class, 'destroy'])->name('subscription.destroy');
 
 
@@ -72,22 +66,43 @@ Route::middleware(['auth'])->group(function () {
         return view('admin.dashboard');
     });
 
-    Route::get('subscribers', [AdminController::class, 'index'])->name('admin.index');
+    // get all subscribers as admin
+    Route::get('subscribers', [SubscribeController::class, 'index'])->name('admin.subscriber.index');
 
-    Route::delete('admin/unsubscribe/{subscribedMail}', [AdminController::class, 'destroy'])->name('admin.destroy');
+    // delete a subscriber as admin
+    Route::delete('admin/unsubscribe/{subscribedMail}', [SubscribeController::class, 'destroy'])->name('admin.subscriber.destroy');
 
-    Route::delete('subscribers/deleteAll', [AdminController::class, 'deleteAll'])->name('admin.deleteAll');
+    // delete all subscribers as admin
+    Route::delete('subscribers/deleteAll', [SubscribeController::class, 'deleteAll'])->name('admin.subscriber.deleteAll');
 
     Route::get('campaign', [CampaignController::class, 'index']);
 
     Route::post('campaign', [CampaignController::class, 'store'])->name('campaign.store');
-});
 
+    // show operations page
+    Route::get('operations', function () {
+        return view('admin.operations');
+    })->name('admin.operations');
 
-/**
- * Run artisan commands from a link button
- */
-Route::get('/commands', function () {
-    Artisan::call('migrate:refresh');
-    return redirect()->back();
+    /**
+     * Admin Commands (operation page)
+     */
+
+    // run artisan command to refresh all migrations
+    Route::get('/refresh-all', function () {
+        Artisan::call('migrate:refresh');
+        return redirect()->back();
+    })->name('operations.refresh-all');
+
+    // delete current signed in profile
+    Route::get('/delete-profile', [AdminController::class, 'destroy'])->name('admin.destroy');
+
+    // delete all profiles
+    Route::get('/delete-all-admins', [AdminController::class, 'deleteAll'])->name('admin.deleteAll');
+
+    // add fake subscribers
+    Route::get('/add-fake-subscribers', function () {
+        factory(App\Subscriber::class, 30)->create();
+        return redirect()->back();
+    })->name('operations.add-fake-subs');
 });
