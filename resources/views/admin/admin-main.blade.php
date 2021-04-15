@@ -7,11 +7,22 @@
     <meta name="description" content="">
     <title>Admin Dashboard</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+    <!-- Alertify Styles -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
 
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+
+    <!-- Alertify notification JavaScript -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
 
     <style>
         .bd-placeholder-img {
@@ -28,8 +39,17 @@
                 font-size: 3.5rem;
             }
         }
-        
-        
+
+        .ajs-message {
+            font-size: 0.9rem;
+            text-shadow: none !important;
+            border: none !important;
+            border-radius: 30px !important;
+        }
+
+        .ajs-success {
+            background-color: rgb(21, 168, 21) !important;
+        }
     </style>
 
 </head>
@@ -48,9 +68,11 @@
 
     <div class="container-fluid">
         <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse" style="border-bottom-right-radius: 30px;">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar"
+                style="border-bottom-right-radius: 30px;">
+
                 <div class="sidebar-sticky pt-3">
-                    <ul class="nav flex-column text-center">
+                    <ul class="nav flex-column text-center mb-5">
                         <li class="nav-item mt-3">
                             <a class="nav-link bg-light text-dark {{ Request::is('admin') ? 'active' : '' }}"
                                 href="/admin" style="border-radius: 30px;">
@@ -71,10 +93,14 @@
                                 Start a campaign
                             </a>
                         </li>
+
+                        <li class="nav-item mt-3">
+                            <a class="nav-link bg-light text-dark {{ Request::is('operations') ? 'active' : '' }}"
+                                href="/operations" style="border-radius: 30px;">
+                                Operations
+                            </a>
+                        </li>
                     </ul>
-
-
-
                 </div>
             </nav>
 
@@ -82,30 +108,32 @@
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 vh-100 mb-5" style="">
 
                 <div class="container d-flex justify-content-around">
-                    Admin Panel
                     <div id="dynamicTime"></div>
                 </div>
+                <span>Signed in as:</span>
+                <h4>{{ auth()->user()->name }}</h4>
                 @yield('admin-content')
 
-
             </main>
-
-
         </div>
-
-
     </div>
-
 </body>
 
 <!-- position: absolute; bottom:0px; width:100%; -->
-<footer style="border-top: 1px solid black;" class="mt-5">
-
-
-    
+<footer class="mt-5 pt-5">
 </footer>
 
+@if (Session('unsubscribed-by-admin'))
+<script>
+    alertify.notify("{!! \Session::get('unsubscribed-by-admin') !!}", "success", 10);
+</script>
+@endif
 
+@if (Session('deletedAll'))
+<script>
+    alertify.notify("{!! \Session::get('deletedAll') !!}", "success", 10);
+</script>
+@endif
 
 <script src="https://unpkg.com/turbolink"></script>
 
@@ -126,6 +154,5 @@
       return i;
     }
 </script>
-
 
 </html>

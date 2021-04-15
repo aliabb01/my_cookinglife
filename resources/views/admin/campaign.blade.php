@@ -1,26 +1,6 @@
 @extends('admin.admin-main')
 @section('admin-content')
 
-<!-- Alertify Styles -->
-<!-- CSS -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
-
-<!-- Default theme -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
-
-<style>
-    .ajs-message {
-        font-size: 0.9rem;
-        text-shadow: none !important;
-        border: none !important;
-        border-radius: 30px !important;
-    }
-
-    .ajs-success {
-        background-color: rgb(21, 168, 21) !important;
-    }
-</style>
-
 
 <div class="container mb-5 pt-5 pb-5">
     <h3 class="text-center mb-5">Start a campaign</h3>
@@ -44,9 +24,6 @@
         <button class="btn btn-primary mt-3" type="submit">Göndər</button>
     </form>
 
-
-    <!-- Alertify notification JavaScript -->
-    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
     @if (Session('campaign-sent'))
     <script>

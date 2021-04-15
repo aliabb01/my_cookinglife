@@ -57,7 +57,7 @@
 
     </div>
 
-    <form id="deleteAllByAdmin-form" action="{{ route('admin.deleteAll') }}" method="POST">
+    <form id="deleteAllByAdmin-form" action="{{ route('admin.subscriber.deleteAll') }}" method="POST">
         @csrf
         @method('DELETE')
         <a class="pr-3 text-danger" href=""
@@ -95,7 +95,7 @@
             <td>
 
                 <form id="deleteByAdmin-form-{{ $subscriber->id }}"
-                    action="{{ route('admin.destroy', [$subscriber->subscribedMail]) }}" method="POST">
+                    action="{{ route('admin.subscriber.destroy', [$subscriber->subscribedMail]) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <a class="text-danger" href="{{ route('subscription.destroy',  $subscriber->subscribedMail) }}"
