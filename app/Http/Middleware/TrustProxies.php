@@ -11,7 +11,7 @@ class TrustProxies extends Middleware
      * The trusted proxies for this application.
      *
      * @var array|string|null
-     */
+     */ // fixes login and register issues in production
     protected $proxies = "*";
 
     /**

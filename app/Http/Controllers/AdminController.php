@@ -2,33 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Subscriber;
+use App\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function index()
+    // destroy currently logged in admins profile
+    public function destroy()
     {
-        // dd(request()->query('sort') == 'new');   
-        $subscribers = new Subscriber;
-        $subscribers = $subscribers->checkSort();      
-
-        return view('admin.subscribers', [
-            'subscribers' => $subscribers
-        ]);
+        $user = User::where('id', auth()->user()->id);
+        $user->delete();
+        return redirect()
+                    ->route('home')
+                    ->with('admin-profile-deleted', 'Your profile was deleted successfully. We are sorry to see you go '. auth()->user()->name);
     }
-
-    public function destroy($subscribedMail)
-    {
-        Subscriber::where('subscribedMail', $subscribedMail)->delete();
-        return redirect()->back();
-    }  
 
     public function deleteAll()
     {
-        Subscriber::truncate();
-        return redirect()
-            ->back()
-            ->with('deletedAll', 'Abunələr tamamilə silinmişdir!');
+        User::truncate();
+        return redirect()->route('home')->with('all-admins-deleted', 'All the administrators were deleted');
     }
 }

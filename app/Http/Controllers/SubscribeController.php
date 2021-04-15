@@ -5,11 +5,23 @@ namespace App\Http\Controllers;
 use App\Mail\SubscribeNotificationMail;
 use App\Subscriber;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Symfony\Component\Console\Input\Input;
 
 class SubscribeController extends Controller
 {
+    public function index()
+    {
+        // dd(request()->query('sort') == 'new');   
+        $subscribers = new Subscriber;
+        $subscribers = $subscribers->checkSort();      
+
+        return view('admin.subscribers', [
+            'subscribers' => $subscribers
+        ]);
+    }
+
     public function show($subscribedMail)
     {
         return view('unsubscribe', ['subscribedMail' => $subscribedMail]);
@@ -44,8 +56,22 @@ class SubscribeController extends Controller
     {
         Subscriber::where('subscribedMail', $subscribedMail)->delete();
 
+        // check if it is logged in / admin
+        if(Auth::check())
+        {
+            return redirect()->back()->with('unsubscribed-by-admin', 'You successfully unsubscribed '. $subscribedMail.' from mailing list');
+        }
+
         return redirect()
             ->route('home')
             ->with('unsubscribed', 'Abunəliyiniz müvəffəqiyyətlə ləğv olunmuşdur!');
-    }    
+    }
+    
+    public function deleteAll()
+    {
+        Subscriber::truncate();
+        return redirect()
+            ->back()
+            ->with('deletedAll', 'Abunələr tamamilə silinmişdir!');
+    }
 }
