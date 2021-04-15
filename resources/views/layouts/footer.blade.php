@@ -180,14 +180,24 @@
 
     </div>
 
+
+
     <div class="mt-5">
-        <a class="btn btn-primary" href="/commands">Refresh migration</a>
-
-
+        @guest
+        <div style="float:right;">
+            <a class="text-danger px-1" href="/login">Daxil ol</a>
+            <a class="text-danger px-1" href="/register">Qeydiyyat</a>
+        </div>
+        @endguest
+        @auth
+        <div class="" style="display:flex; justify-content:space-around;">            
+                        
+        </div>
+        @endauth
     </div>
 
 
-    
-    
+
+
 
 </div>

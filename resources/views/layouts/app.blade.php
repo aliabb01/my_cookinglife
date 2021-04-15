@@ -290,6 +290,12 @@
     </script>
     @endif
 
+    @if (Session('admin-profile-deleted'))
+    <script>
+        alertify.notify("{!! \Session::get('admin-profile-deleted') !!}", "success", 10);    
+    </script>    
+    @endif
+
     <!-- Callbell script -->
     <!-- Start of Async Callbell Code -->
     <script>
