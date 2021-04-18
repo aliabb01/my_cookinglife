@@ -27,10 +27,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('elaqe', 'ContactFormController@create');
 
 Route::post('elaqe', 'ContactFormController@store');
