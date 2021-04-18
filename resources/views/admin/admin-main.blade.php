@@ -50,6 +50,10 @@
         .ajs-success {
             background-color: rgb(21, 168, 21) !important;
         }
+
+        .active{
+            font-weight: bold;
+        }
     </style>
 
 </head>

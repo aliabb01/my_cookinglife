@@ -1,7 +1,6 @@
 @extends('admin.admin-main')
+
 @section('admin-content')
-
-
 <div class="container mb-5 pt-5 pb-5">
     <h3 class="text-center mb-5">Start a campaign</h3>
     <form method="POST" action="/campaign">

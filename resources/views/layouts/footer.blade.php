@@ -93,7 +93,9 @@
     }
 </style>
 
-<div class="container-fluid bg-footer text-light pt-5 pb-5 mt-auto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<div class="container-fluid bg-footer text-light pt-5 pb-5 mt-auto" id="footer">
     <div class="row">
         <div class="col-md-3 footer-columns">
             <h3 class="brandName">MyCookingLife</h3>
@@ -140,11 +142,11 @@
         </div>
     </div>
 
-    <div class="container mt-5 text-center" style="">
+    <div class="container mt-5 text-center" id="subscribeContainer">
 
         <label class="mr-1" for="subscribedMail">Email siyahımıza abunə olun :</label>
 
-        <div class="" style="position: relative; display:inline-block; justify-content:center;">
+        <div class="" style="position: relative; display:inline-block; justify-content:center;" id="subscribeForm">
 
             <form method="POST" action="/subscribe">
                 @csrf
@@ -190,8 +192,8 @@
         </div>
         @endguest
         @auth
-        <div class="" style="display:flex; justify-content:space-around;">            
-                        
+        <div class="" style="display:flex; justify-content:space-around;">
+
         </div>
         @endauth
     </div>
@@ -201,3 +203,17 @@
 
 
 </div>
+
+<script>
+    var observer = new IntersectionObserver(function(entries) {
+	// isIntersecting is true when element and viewport are overlapping
+	// isIntersecting is false when element and viewport don't overlap
+    let scrollClass = "animate__" + "fadeInDown";
+	if(entries[0].isIntersecting === true)
+		document.getElementById("subscribeForm").classList.add("animate__animated", scrollClass);
+    else
+    document.getElementById("subscribeForm").classList.remove("animate__animated", scrollClass);
+}, { threshold: [0] });
+
+observer.observe(document.querySelector("#subscribeContainer"));
+</script>

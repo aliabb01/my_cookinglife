@@ -2,6 +2,12 @@
 
 @section('admin-content')
 
+<style>
+    a {
+        box-shadow: none !important;
+    }
+</style>
+
 <div class="container mt-4">
     <h3 class="text-center mb-5">Operations</h3>
 

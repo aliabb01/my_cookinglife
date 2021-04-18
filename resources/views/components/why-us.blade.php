@@ -35,26 +35,25 @@
         height: 100%;
     }
 
-    .bg-primary{
-        background-color:#3490dc;
+    .bg-primary {
+        background-color: #3490dc;
     }
 
-    .bg-white{
-        background-color:#fff;
+    .bg-white {
+        background-color: #fff;
     }
 
-    .bg-success{
-        background-color:#38c172;
-    }
-    
-    .pt-2{
-        padding-top:.5rem;
+    .bg-success {
+        background-color: #38c172;
     }
 
-    .pb-2{
-        padding-bottom:.5rem;
+    .pt-2 {
+        padding-top: .5rem;
     }
 
+    .pb-2 {
+        padding-bottom: .5rem;
+    }
 </style>
 
 

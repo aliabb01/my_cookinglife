@@ -64,11 +64,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav m-3">
-                        <li class="{{ Request::is('ev') ? 'active' : '' }}"><a href="/ev" class="nav-link">Ana
+                        <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="/" class="nav-link">Ana
                                 Səhifə</a> </li>
-                        <li class="{{ Request::is('haqqimizda') ? 'active' : '' }}"><a href=""
+                        <li class="{{ Request::is('haqqimizda') ? 'active' : '' }}"><a href="/haqqimizda"
                                 class="nav-link">Haqqımızda</a></li>
-                        <li class="dropdown bottom-line">
+                        {{-- <li class="dropdown bottom-line">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 Şirniyyatlar
@@ -91,7 +91,7 @@
                                     Digərləri
                                 </a>
                             </div>
-                        </li>
+                        </li> --}}
                         <li class="nav-item {{ Request::is('elaqe') ? 'active' : '' }}"><a href="/elaqe"
                                 class="nav-link">Əlaqə</a></li>
 
