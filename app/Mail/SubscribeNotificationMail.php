@@ -29,6 +29,8 @@ class SubscribeNotificationMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('MyCookingLife bildiriş siyahısı abunəliyi')->markdown('emails.subscribe-notification');
+        return $this->subject('MyCookingLife bildiriş siyahısı abunəliyi')
+        ->from('MyCookingLife')
+        ->markdown('emails.subscribe-notification');
     }
 }
