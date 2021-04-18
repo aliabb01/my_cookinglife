@@ -151,13 +151,15 @@
             <form method="POST" action="/subscribe">
                 @csrf
                 <input placeholder="E-poçt ünvanınız" type="email" name="subscribedMail" id="subscribedMail"
-                    class="p-2 pl-3" style="border-radius: 25px; width: 300px; border:none; outline: none;" required>
+                    class="p-2 pl-3 @error('subscribedMail') is-invalid @enderror" style="border-radius: 25px; width: 300px; border:none; outline: none;" required oninvalid="this.setCustomValidity('Email adresinizi qeyd edin')">
                 <button type="submit" class="btn btn-primary-gradient"
                     style="position:absolute; right:-30px; border-radius:25px; border:none; padding:8px; padding-right:15px; padding-left:15px;">Abunə
                     ol</button>
 
                 @error('subscribedMail')
-                <div class="alert alert-danger" style="position:absolute; top:40px;">{{ $message }}</div>
+                <span class="invalid-feedback" role="alert" style="position: absolute;">
+                    <strong>E-mail ünvanı 40 hərfdən çox olmamalıdır!</strong>
+                </span>
                 @enderror
             </form>
 
