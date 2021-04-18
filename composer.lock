@@ -1465,23 +1465,23 @@
         },
         {
             "name": "maxmind-db/reader",
-            "version": "v1.10.0",
+            "version": "v1.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/maxmind/MaxMind-DB-Reader-php.git",
-                "reference": "07f84d969cfc527ce49388558a366ad376f1f35c"
+                "reference": "569bd44d97d30a4ec12c7793a33004a76d4caf18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/maxmind/MaxMind-DB-Reader-php/zipball/07f84d969cfc527ce49388558a366ad376f1f35c",
-                "reference": "07f84d969cfc527ce49388558a366ad376f1f35c",
+                "url": "https://api.github.com/repos/maxmind/MaxMind-DB-Reader-php/zipball/569bd44d97d30a4ec12c7793a33004a76d4caf18",
+                "reference": "569bd44d97d30a4ec12c7793a33004a76d4caf18",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2"
             },
             "conflict": {
-                "ext-maxminddb": "<1.10.0,>=2.0.0"
+                "ext-maxminddb": "<1.10.1,>=2.0.0"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "*",
@@ -1524,9 +1524,9 @@
             ],
             "support": {
                 "issues": "https://github.com/maxmind/MaxMind-DB-Reader-php/issues",
-                "source": "https://github.com/maxmind/MaxMind-DB-Reader-php/tree/v1.10.0"
+                "source": "https://github.com/maxmind/MaxMind-DB-Reader-php/tree/v1.10.1"
             },
-            "time": "2021-02-09T17:52:47+00:00"
+            "time": "2021-04-14T17:49:35+00:00"
         },
         {
             "name": "maxmind/web-service-common",
@@ -5141,16 +5141,16 @@
         },
         {
             "name": "facade/flare-client-php",
-            "version": "1.6.1",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/flare-client-php.git",
-                "reference": "f2b0969f2d9594704be74dbeb25b201570a98098"
+                "reference": "6bf380035890cb0a09b9628c491ae3866b858522"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/flare-client-php/zipball/f2b0969f2d9594704be74dbeb25b201570a98098",
-                "reference": "f2b0969f2d9594704be74dbeb25b201570a98098",
+                "url": "https://api.github.com/repos/facade/flare-client-php/zipball/6bf380035890cb0a09b9628c491ae3866b858522",
+                "reference": "6bf380035890cb0a09b9628c491ae3866b858522",
                 "shasum": ""
             },
             "require": {
@@ -5194,7 +5194,7 @@
             ],
             "support": {
                 "issues": "https://github.com/facade/flare-client-php/issues",
-                "source": "https://github.com/facade/flare-client-php/tree/1.6.1"
+                "source": "https://github.com/facade/flare-client-php/tree/1.7.0"
             },
             "funding": [
                 {
@@ -5202,7 +5202,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-04-08T08:50:01+00:00"
+            "time": "2021-04-12T09:30:36+00:00"
         },
         {
             "name": "facade/ignition",
