@@ -27,13 +27,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/ev', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('elaqe', 'ContactFormController@create');
 
 Route::post('elaqe', 'ContactFormController@store');
+
+Route::get('/haqqimizda', function () {
+    return view('about-us');
+})->name('page.about-us');
 
 /**
  * Subscription Resource Routes
@@ -102,7 +106,7 @@ Route::middleware(['auth'])->group(function () {
 
     // add fake subscribers
     Route::get('/add-fake-subscribers', function () {
-        factory(Subscriber::class, 30)->create();
+        Artisan::call('db:seed --class=SubscriberSeeder');
         return redirect()->back();
     })->name('operations.add-fake-subs');
 });
