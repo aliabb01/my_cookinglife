@@ -296,6 +296,12 @@
     </script>    
     @endif
 
+    @if (Session('all-admins-deleted'))
+        <script>
+            alertify.notify("{!! \Session::get('all-admins-deleted') !!}", "success", 10);
+        </script>
+    @endif
+
     <!-- Callbell script -->
     <!-- Start of Async Callbell Code -->
     <script>
