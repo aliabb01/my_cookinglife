@@ -57,6 +57,7 @@
 
     </div>
 
+    @if (auth()->user()->privilege == 1)
     <form id="deleteAllByAdmin-form" action="{{ route('admin.subscriber.deleteAll') }}" method="POST">
         @csrf
         @method('DELETE')
@@ -65,6 +66,7 @@
             Delete all
         </a>
     </form>
+    @endif
 
 </div>
 
@@ -93,7 +95,7 @@
             <td>{{ $subscriber->created_at->locale('en')->diffForHumans() }}</td>
 
             <td>
-
+                @if (auth()->user()->privilege == 1)
                 <form id="deleteByAdmin-form-{{ $subscriber->id }}"
                     action="{{ route('admin.subscriber.destroy', [$subscriber->subscribedMail]) }}" method="POST">
                     @csrf
@@ -103,7 +105,7 @@
                         Sil
                     </a>
                 </form>
-
+                @endif
             </td>
         </tr>
 

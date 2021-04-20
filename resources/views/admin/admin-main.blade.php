@@ -7,8 +7,7 @@
     <meta name="description" content="">
     <title>Admin Dashboard</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
     <!-- Alertify Styles -->
     <!-- CSS -->
@@ -19,10 +18,6 @@
 
     <!-- Alertify notification JavaScript -->
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
-    </script>
 
     <style>
         .bd-placeholder-img {
@@ -51,8 +46,14 @@
             background-color: rgb(21, 168, 21) !important;
         }
 
-        .active{
+        .active {
             font-weight: bold;
+        }
+
+        .privilegeBadge {}
+
+        .privilegeBadge:hover {
+            background-color: #007BFF;
         }
     </style>
 
@@ -99,6 +100,14 @@
                         </li>
 
                         <li class="nav-item mt-3">
+                            <a class="nav-link bg-light text-dark {{ Request::has('profile') ? 'active' : '' }}"
+                                href="{{ route('admin.profile', auth()->user()->name) }}" style="border-radius: 30px;">
+                                Admin profile
+                            </a>
+                        </li>
+                        
+
+                        <li class="nav-item mt-3">
                             <a class="nav-link bg-light text-dark {{ Request::is('operations') ? 'active' : '' }}"
                                 href="/operations" style="border-radius: 30px;">
                                 Operations
@@ -114,8 +123,21 @@
                 <div class="container d-flex justify-content-around">
                     <div id="dynamicTime"></div>
                 </div>
-                <span>Signed in as:</span>
-                <h4>{{ auth()->user()->name }}</h4>
+
+                <div class="d-flex justify-content-around">
+                    <div>
+                        <span>Signed in as:</span>
+                        <h4>{{ auth()->user()->name }}</h4>
+                    </div>
+
+                    <div class="text-center">
+                        <span>Admin Privileges:</span>
+                        <h4>
+                            @include(auth()->user()->returnPrivilege())
+                        </h4>
+                    </div>
+                </div>
+
                 @yield('admin-content')
 
             </main>
@@ -141,7 +163,14 @@
 
 <script src="https://unpkg.com/turbolink"></script>
 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
 <script>
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    });
+
     function startTime() {
       var today = new Date();      
       var h = today.getHours();
