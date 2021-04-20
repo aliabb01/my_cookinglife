@@ -79,6 +79,12 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('campaign', [CampaignController::class, 'store'])->name('campaign.store');
 
+    // show view to edit admin information form
+    Route::get('/profile/@{user:name}', [AdminController::class, 'edit'])->name('admin.profile');
+
+    // update user profile PATCH
+    Route::patch('/profile/@{user:name}', [AdminController::class, 'update'])->name('admin.profile.update');
+
     // show operations page
     Route::get('operations', function () {
         return view('admin.operations');
