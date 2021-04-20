@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'privilige'
     ];
 
     /**
@@ -36,4 +36,28 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function returnPrivilege()
+    {
+        $privilege = 'privileges.low';
+        if(auth()->user()->privilege==2)
+        {
+            $privilege = 'privileges.intermediate';            
+        }
+        else if(auth()->user()->privilege==1)
+        {
+            $privilege = 'privileges.advanced';  
+        }
+
+        return $privilege;       
+    }
+
+    public function privilegeInWords()
+    {
+        $privilege = auth()->user()->privilege;
+        $privilegeInWords = ($privilege==1) ? 'Advanced' : (($privilege==2) ? 'Intermediate' : 'Basic');
+        return $privilegeInWords;
+    }
+
+    
 }
