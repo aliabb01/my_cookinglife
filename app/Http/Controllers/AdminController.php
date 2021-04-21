@@ -25,35 +25,32 @@ class AdminController extends Controller
 
         $inputOldPassword = request('oldPassword');
         $passwordHash = $user->password;
-                
+
         if (Hash::check($inputOldPassword, $passwordHash)) {
 
             $attributes = request()->validate([
                 'name' => ['string', 'required', Rule::unique('users')->ignore($user)],
                 'email' => ['string', 'required', 'email', 'max:40', Rule::unique('users')->ignore($user)],
-                'password' => ['exclude_if:password, ""','string', 'min:8', 'confirmed'],
+                'password' => ['exclude_if:password, ""', 'string', 'min:8', 'confirmed'],
             ]);
-
-            $attributes['password'] = Hash::make(request('password'));
+            
+            if (request('password') != '') {
+                $attributes['password'] = Hash::make(request('password'));
+            }
 
             $user->update($attributes);
             return redirect()
                 ->route('admin.profile', $user->name)
                 ->with('profile-updated', 'Your profile was updated successfully!');
-        }
-        else if (request('oldPassword') == '')
-        {
+        } else if (request('oldPassword') == '') {
             return redirect()
-                    ->route('admin.profile', $user->name)
-                    ->with('write-current-password', 'You should write your current password to submit the form!');
-        }
-        else
-        {
+                ->route('admin.profile', $user->name)
+                ->with('write-current-password', 'You should write your current password to submit the form!');
+        } else {
             return redirect()
-                    ->back()
-                    ->with('wrong-current-password', 'Current password that you submitted was not correct!');
+                ->back()
+                ->with('wrong-current-password', 'Current password that you submitted was not correct!');
         }
-        
     }
 
     // destroy currently logged in admins profile
