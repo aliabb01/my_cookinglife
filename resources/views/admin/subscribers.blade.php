@@ -19,14 +19,32 @@
     .sort-select:focus {
         outline: none;
     }
+
+    #searchSubs {
+        transition: 0.5s;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-radius: 0px;
+    }
+
+    #searchSubs:focus {
+        transition: 0.5s;
+        width: 120%;
+    }
 </style>
 
 @if ($subscribers->count() != 0)
 <div class="m-5">
 
-    <div class="container d-flex justify-content-around">
+    <div class="container d-flex justify-content-around flex-wrap">
 
-        <div class="input-group mb-3" style="width: 200px; flex-wrap:nowrap ;">
+        <div class="mb-3">
+            <input class="form-control" id="searchSubs" style="box-shadow: none;" type="text"
+                placeholder="Search on this page ...">
+        </div>
+
+        <div class="input-group mb-3" style="width: 200px; flex-wrap:nowrap;">
             <div class="input-group-prepend">
                 <label class="input-group-text" for="sortSelect">Sort by :</label>
             </div>
@@ -47,84 +65,101 @@
                     value="{{ request()->fullUrlWithQuery(['sort' => 'email']) }}">Email (A-Z)</option>
 
             </select>
+        </div>
 
-            {{-- <div>
+        {{--
                 Filter by : 
                 <a href="{{ request()->fullUrlWithQuery(['sort' => 'new']) }}">New</a>
-            <a href="{{ request()->fullUrlWithQuery(['sort' => 'id']) }}">ID</a>
-            <a href="{{ request()->fullUrlWithQuery(['sort' => 'email']) }}">Email</a>
-        </div> --}}
+        <a href="{{ request()->fullUrlWithQuery(['sort' => 'id']) }}">ID</a>
+        <a href="{{ request()->fullUrlWithQuery(['sort' => 'email']) }}">Email</a> --}}
+
+        <div>
+            @if (auth()->user()->privilege == 1)
+            <form id="deleteAllByAdmin-form" action="{{ route('admin.subscriber.deleteAll') }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <a class="pr-3 text-danger" href=""
+                    onclick="event.preventDefault(); document.getElementById('deleteAllByAdmin-form').submit();">
+                    Delete all
+                </a>
+            </form>
+            @endif
+        </div>
 
     </div>
 
-    @if (auth()->user()->privilege == 1)
-    <form id="deleteAllByAdmin-form" action="{{ route('admin.subscriber.deleteAll') }}" method="POST">
-        @csrf
-        @method('DELETE')
-        <a class="pr-3 text-danger" href=""
-            onclick="event.preventDefault(); document.getElementById('deleteAllByAdmin-form').submit();">
-            Delete all
-        </a>
-    </form>
-    @endif
-
 </div>
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col"># id</th>
-            <th scope="col">Email Address</th>
-            <th scope="col">Created</th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead class="bg-dark text-light">
+            <tr>
+                <th scope="col"># id</th>
+                <th scope="col">Email Address</th>
+                <th scope="col">Created</th>
+            </tr>
+        </thead>
+        <tbody id="subsTable">
 
-        @foreach ($subscribers as $subscriber)
+            @foreach ($subscribers as $subscriber)
 
-        <tr>
-            <th scope="row">
-                {{ $subscriber->id }}
-            </th>
-            <td>
-                @if ($subscriber->created_at->diffInHours(now()) < 5) <span class="badge badge-primary badge-pill"
-                    title="{{ $subscriber->created_at->locale('en')->diffForHumans() }}">Yeni</span>
+            <tr>
+                <th scope="row">
+                    {{ $subscriber->id }}
+                </th>
+                <td>
+                    @if ($subscriber->created_at->diffInHours(now()) < 5) <span class="badge badge-primary badge-pill"
+                        title="{{ $subscriber->created_at->locale('en')->diffForHumans() }}">Yeni</span>
+                        @endif
+                        {{ $subscriber->subscribedMail }}
+                </td>
+                <td>{{ $subscriber->created_at->locale('en')->diffForHumans() }}</td>
+
+                <td>
+                    @if (auth()->user()->privilege == 1)
+                    <form id="deleteByAdmin-form-{{ $subscriber->id }}"
+                        action="{{ route('admin.subscriber.destroy', [$subscriber->subscribedMail]) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <a class="text-danger" href="{{ route('subscription.destroy',  $subscriber->subscribedMail) }}"
+                            onclick="event.preventDefault(); this.parentNode.submit();">
+                            Sil
+                        </a>
+                    </form>
                     @endif
-                    {{ $subscriber->subscribedMail }}
-            </td>
-            <td>{{ $subscriber->created_at->locale('en')->diffForHumans() }}</td>
+                </td>
+            </tr>
 
-            <td>
-                @if (auth()->user()->privilege == 1)
-                <form id="deleteByAdmin-form-{{ $subscriber->id }}"
-                    action="{{ route('admin.subscriber.destroy', [$subscriber->subscribedMail]) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <a class="text-danger" href="{{ route('subscription.destroy',  $subscriber->subscribedMail) }}"
-                        onclick="event.preventDefault(); this.parentNode.submit();">
-                        Sil
-                    </a>
-                </form>
-                @endif
-            </td>
-        </tr>
+            @endforeach
 
-        @endforeach
+        </tbody>
+    </table>
+</div>
 
-    </tbody>
-</table>
-
-
-<div class="">
+<div class="pb-5 ml-4">
     {{-- ->appends(request()->query()) --}}
     {{ $subscribers->links() }}
 </div>
 
-</div>
 @else
 <div class="m-5">
     Hal hazırda heç bir abunə yoxdur
 </div>
 @endif
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'
+    integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=='
+    crossorigin='anonymous'></script>
+
+<script>
+    $(document).ready(function(){
+      $("#searchSubs").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#subsTable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)                  
+        });
+      });
+    });
+</script>
 
 @endsection
