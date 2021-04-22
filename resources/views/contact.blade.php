@@ -76,6 +76,10 @@
 
         @endif --}}
 
+        <div class="captcha mt-3">
+            {!! app('captcha')->display() !!}
+        </div>
+
 
 
         <div class="flex-column mt-4">

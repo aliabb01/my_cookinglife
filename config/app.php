@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
         Stevebauman\Location\LocationServiceProvider::class,
+        Buzz\LaravelGoogleCaptcha\CaptchaServiceProvider::class,
         /*
          * Application Service Providers...
          */

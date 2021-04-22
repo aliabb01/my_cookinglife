@@ -23,6 +23,7 @@ class ContactFormController extends Controller
             'senderName' => 'required|min:3|max:30',
             'senderEmailName' => 'required|email|max:40',
             'senderText' => 'required|min:10|max:255',
+            'g-recaptcha-response' => 'required|captcha',
         ]);
 
         // Send an email
