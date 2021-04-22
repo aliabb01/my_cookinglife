@@ -32,10 +32,12 @@
 
                 <div class="d-flex flex-column justify-content-center">
                     <div class="mt-2">
-                        <label class="form-label" for="contactName"><strong style="font-size: 1.1rem;">Ad :</strong></label>
-                        <input class="form-control @error('senderName') is-invalid @enderror" style="box-shadow:none; width:80%;"
-                            type="text" name="senderName" id="contactName" placeholder="Adınız"
-                            title="Zəhmət olmasa boşluğu doldurun" value="{{old('contactName')}}" required>
+                        <label class="form-label" for="contactName"><strong style="font-size: 1.1rem;">Ad
+                                :</strong></label>
+                        <input class="form-control @error('senderName') is-invalid @enderror"
+                            style="box-shadow:none; width:80%;" type="text" name="senderName" id="contactName"
+                            placeholder="Adınız" title="Zəhmət olmasa boşluğu doldurun" value="{{old('contactName')}}"
+                            required>
 
                         @error('senderName')
 
@@ -45,7 +47,8 @@
                     </div>
 
                     <div class="mt-3">
-                        <label class="form-label" for="contactEmail"><strong style="font-size: 1.1rem;">E-poçt :</strong></label>
+                        <label class="form-label" for="contactEmail"><strong style="font-size: 1.1rem;">E-poçt
+                                :</strong></label>
                         <input class="form-control @error('senderEmailName') is-invalid @enderror"
                             style="box-shadow:none; width:80%;" type="email" name="senderEmailName" id="contactEmail"
                             placeholder="E-poçt ünvan" title="Zəhmət olmasa boşluğu doldurun"
@@ -77,38 +80,34 @@
                     </div>
                 </div>
 
-                {{-- @if ($errors->any())
-                @foreach ($errors->all() as $error)
-                <div class="alert alert-danger" role="alert">
-                    {{$error}}
+
+
+                <div class="form-group @error('g-recaptcha-response') is-invalid @enderror">
+                    <div class="captcha mt-3">
+                        {!! app('captcha')->display() !!}
+                    </div>
+                </div>
+
+                @error('g-recaptcha-response')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
+
+                <div class="flex-column mt-4">
+                    <button class="btn btn-email-send btn-lg text-light" type="submit">
+                        <span id="contactFormSend">Göndər</span>
+                        <div id="contactFormSendLoad" class="mb-1 px-2" style="display:none;">
+                            <span class="spinner-border spinner-border-sm mx-2" role="status" aria-hidden="true"></span>
+                        </div>
+                    </button>
+                </div>
+
+            </form>
+
         </div>
-        @endforeach
-
-        @endif --}}
-
-
-
-        <div class="form-group @error('g-recaptcha-response') is-invalid @enderror">
-            <div class="captcha mt-3">
-                {!! app('captcha')->display() !!}
-            </div>
-        </div>
-
-        @error('g-recaptcha-response')
-        <div class="invalid-feedback">
-            {{ $message }}
-        </div>
-        @enderror
-
-        <div class="flex-column mt-4">
-            <button class="btn btn-email-send btn-lg text-light" type="submit">Göndər</button>
-        </div>
-
-        </form>
 
     </div>
-
-</div>
 
 </div>
 
@@ -145,6 +144,17 @@
 </div>
 
 {!! app('captcha')->displayJs() !!}
+
+<script>
+    let contactForm = document.getElementById("contactForm");
+    var send = document.getElementById("contactFormSend");
+    var load = document.getElementById("contactFormSendLoad");
+
+    contactForm.addEventListener('submit', function() {
+        send.style.display = "none";
+        load.style.display = "block";
+    });
+</script>
 
 <script>
     var textarea = document.getElementById("emailMessage");
