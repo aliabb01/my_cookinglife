@@ -98,9 +98,9 @@
                                 Start a campaign
                             </a>
                         </li>
-
+                        
                         <li class="nav-item mt-3">
-                            <a class="nav-link bg-light text-dark {{ Request::has('profile') ? 'active' : '' }}"
+                            <a class="nav-link bg-light text-dark {{ Request::is('profile/@'. auth()->user()->name) ? 'active' : '' }}"
                                 href="{{ route('admin.profile', auth()->user()->name) }}" style="border-radius: 30px;">
                                 Admin profile
                             </a>
@@ -109,7 +109,7 @@
 
                         <li class="nav-item mt-3">
                             <a class="nav-link bg-light text-dark {{ Request::is('operations') ? 'active' : '' }}"
-                                href="/operations" style="border-radius: 30px;">
+                                href="{{ route('admin.operations') }}" style="border-radius: 30px;">
                                 Operations
                             </a>
                         </li>

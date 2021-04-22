@@ -148,9 +148,6 @@
 
                 <hr>
 
-
-
-
             </div>
         </form>
 
@@ -166,7 +163,7 @@
 
                 <div class="d-flex align-items-center">
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#staticBackdrop">
                         Delete Profile
                     </button>
                 </div>
