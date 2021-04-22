@@ -11,8 +11,12 @@
         color: white;
     }
 
-    .bg-light-gray{
+    .bg-light-gray {
         background-color: #E9ECEF;
+    }
+
+    button {
+        box-shadow: none !important;
     }
 </style>
 
@@ -21,50 +25,56 @@
         <div class="col bg-light-gray shadow-lg pt-5 pb-5 pr-5 pl-5 rounded-left container-email">
             <h3 class="text-center">Əlaqə</h3>
 
+            <hr>
+
             <form action="/elaqe" method="POST" class="mt-4" id="contactForm">
                 @csrf
 
-                <div class="mt-2">
-                    <label class="form-label" for="contactName"><strong>Adınız :</strong></label>
-                    <input class="form-control " style="box-shadow:none;" type="text" name="senderName" id="contactName"
-                        placeholder="Adınız" title="Zəhmət olmasa boşluğu doldurun" value="{{old('contactName')}}"
-                        required>
+                <div class="d-flex flex-column justify-content-center">
+                    <div class="mt-2">
+                        <label class="form-label" for="contactName"><strong style="font-size: 1.1rem;">Ad :</strong></label>
+                        <input class="form-control @error('senderName') is-invalid @enderror" style="box-shadow:none; width:80%;"
+                            type="text" name="senderName" id="contactName" placeholder="Adınız"
+                            title="Zəhmət olmasa boşluğu doldurun" value="{{old('contactName')}}" required>
 
-                    @error('senderName')
+                        @error('senderName')
 
-                    <div class="alert alert-danger">{{ $message }}</div>
+                        <div class="invalid-feedback">{{ $message }}</div>
 
-                    @enderror
-                </div>
+                        @enderror
+                    </div>
 
-                <div class="mt-2">
-                    <label class="form-label" for="contactEmail"><strong>E-poçt :</strong></label>
-                    <input class="form-control @error('contactEmail') is-invalid @enderror" style="box-shadow:none;"
-                        type="email" name="senderEmailName" id="contactEmail" placeholder="E-poçt ünvan"
-                        title="Zəhmət olmasa boşluğu doldurun" value="{{old('contactEmail')}}" required>
+                    <div class="mt-3">
+                        <label class="form-label" for="contactEmail"><strong style="font-size: 1.1rem;">E-poçt :</strong></label>
+                        <input class="form-control @error('senderEmailName') is-invalid @enderror"
+                            style="box-shadow:none; width:80%;" type="email" name="senderEmailName" id="contactEmail"
+                            placeholder="E-poçt ünvan" title="Zəhmət olmasa boşluğu doldurun"
+                            value="{{old('contactEmail')}}" required>
 
-                    @error('senderEmailName')
+                        @error('senderEmailName')
 
-                    <div class="alert alert-danger">{{ $message }}</div>
+                        <div class="invalid-feedback">{{ $message }}</div>
 
-                    @enderror
+                        @enderror
 
-                </div>
+                    </div>
 
-                <div class="mt-2">
-                    <label for="emailMessage"><strong> Mesajınız :</strong></label>
-                    <textarea class="form-control @error('emailMessage') is-invalid @enderror" id="emailMessage"
-                        placeholder="Yaz" rows="7" style="resize:none; box-shadow:none;" name="senderText"
-                        value="{{old('emailMessage')}}" required></textarea>
 
-                    <span style="font-size: smaller; margin-top:7px;" id="chars-left"></span>
+                    <div class="mt-3">
+                        <label for="emailMessage"><strong style="font-size: 1.1rem;"> Mesajınız :</strong></label>
+                        <textarea class="form-control @error('senderText') is-invalid @enderror" id="emailMessage"
+                            placeholder="Yaz" rows="7" style="resize:none; box-shadow:none;" name="senderText"
+                            value="{{old('emailMessage')}}" required></textarea>
 
-                    @error('senderText')
+                        <span style="font-size: smaller; margin-top:7px;" id="chars-left"></span>
 
-                    <div class="alert alert-danger">{{ $message }}</div>
+                        @error('senderText')
 
-                    @enderror
+                        <div class="invalid-feedback">{{ $message }}</div>
 
+                        @enderror
+
+                    </div>
                 </div>
 
                 {{-- @if ($errors->any())
@@ -76,11 +86,19 @@
 
         @endif --}}
 
-        <div class="captcha mt-3">
-            {!! app('captcha')->display() !!}
+
+
+        <div class="form-group @error('g-recaptcha-response') is-invalid @enderror">
+            <div class="captcha mt-3">
+                {!! app('captcha')->display() !!}
+            </div>
         </div>
 
-
+        @error('g-recaptcha-response')
+        <div class="invalid-feedback">
+            {{ $message }}
+        </div>
+        @enderror
 
         <div class="flex-column mt-4">
             <button class="btn btn-email-send btn-lg text-light" type="submit">Göndər</button>
@@ -126,6 +144,7 @@
     </div>
 </div>
 
+{!! app('captcha')->displayJs() !!}
 
 <script>
     var textarea = document.getElementById("emailMessage");

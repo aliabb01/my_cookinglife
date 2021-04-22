@@ -10,7 +10,7 @@ return [
      * Custom with function name (example customRequestCaptcha) or class@method (example \App\CustomRequestCaptcha@custom).
      * Function must be return instance, read more in repo ``https://github.com/thinhbuzz/laravel-google-captcha-examples``
      */
-    'request_method' => '\App\CustomRequestCaptcha@custom',
+    'request_method' => null,
     'options' => [
         'multiple' => false,
         'lang' => app()->getLocale(),
