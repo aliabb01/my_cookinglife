@@ -7,7 +7,8 @@
     <meta name="description" content="">
     <title>Admin Dashboard</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
     <!-- Alertify Styles -->
     <!-- CSS -->
@@ -48,12 +49,17 @@
 
         .active {
             font-weight: bold;
+            border-left: 10px solid rgb(0, 153, 255);
         }
 
         .privilegeBadge {}
 
         .privilegeBadge:hover {
             background-color: #007BFF;
+        }
+
+        .sidebarLink {
+            border-radius: 5px;
         }
     </style>
 
@@ -79,37 +85,35 @@
                 <div class="sidebar-sticky pt-3">
                     <ul class="nav flex-column text-center mb-5">
                         <li class="nav-item mt-3">
-                            <a class="nav-link bg-light text-dark {{ Request::is('admin') ? 'active' : '' }}"
-                                href="/admin" style="border-radius: 30px;">
+                            <a class="nav-link bg-light text-dark sidebarLink {{ Request::is('admin') ? 'active' : '' }}"
+                                href="/admin" style="">
                                 Dashboard
                             </a>
                         </li>
 
                         <li class="nav-item mt-3">
-                            <a class="nav-link bg-light text-dark {{ Request::is('subscribers') ? 'active' : '' }}"
-                                href="/subscribers" style="border-radius: 30px;">
+                            <a class="nav-link bg-light text-dark sidebarLink {{ Request::is('subscribers') ? 'active' : '' }}"
+                                href="/subscribers" style="">
                                 Subscribers
                             </a>
                         </li>
-
                         <li class="nav-item mt-3">
-                            <a class="nav-link bg-light text-dark {{ Request::is('campaign') ? 'active' : '' }}"
-                                href="/campaign" style="border-radius: 30px;">
-                                Start a campaign
-                            </a>
-                        </li>
-                        
-                        <li class="nav-item mt-3">
-                            <a class="nav-link bg-light text-dark {{ Request::is('profile/@'. auth()->user()->name) ? 'active' : '' }}"
-                                href="{{ route('admin.profile', auth()->user()->name) }}" style="border-radius: 30px;">
+                            <a class="nav-link bg-light text-dark sidebarLink {{ Request::is('profile/@'. auth()->user()->name) ? 'active' : '' }}"
+                                href="{{ route('admin.profile', auth()->user()->name) }}" style="">
                                 Admin profile
                             </a>
                         </li>
-                        
 
                         <li class="nav-item mt-3">
-                            <a class="nav-link bg-light text-dark {{ Request::is('operations') ? 'active' : '' }}"
-                                href="{{ route('admin.operations') }}" style="border-radius: 30px;">
+                            <a class="nav-link bg-light text-dark sidebarLink {{ Request::is('campaign') ? 'active' : '' }}"
+                                href="/campaign" style="">
+                                Start a campaign
+                            </a>
+                        </li>
+
+                        <li class="nav-item mt-3">
+                            <a class="nav-link bg-light text-dark sidebarLink {{ Request::is('operations') ? 'active' : '' }}"
+                                href="{{ route('admin.operations') }}" style="">
                                 Operations
                             </a>
                         </li>
@@ -163,8 +167,12 @@
 
 <script src="https://unpkg.com/turbolink"></script>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+</script>
 
 <script>
     $(function () {

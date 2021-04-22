@@ -14,28 +14,28 @@
     }
 
     .card-counter:hover {
-        box-shadow: 4px 4px 20px #DADADA;
+        box-shadow: 10px 10px 20px #DADADA;
         transition: .3s linear all;
     }
 
     .card-counter.primary {
-        background-color: #007bff;
-        color: #FFF;
+        border-left: 10px solid #007bff;
+        color: black;
     }
 
     .card-counter.danger {
-        background-color: #ef5350;
-        color: #FFF;
+        border-left: 10px solid #ef5350;
+        color: black;
     }
 
     .card-counter.success {
-        background-color: #66bb6a;
-        color: #FFF;
+        border-left: 10px solid #66bb6a;
+        color: black;
     }
 
     .card-counter.info {
-        background-color: #26c6da;
-        color: #FFF;
+        border-left: 10px solid #26c6da;
+        color: black;
     }
 
     .card-counter i {
