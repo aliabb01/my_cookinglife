@@ -3,6 +3,11 @@
 @section('admin-content')
 
 <style>
+    :root {
+        --hoverOpacity: 1;
+        --counterOpacity: 0.5;
+    }
+
     .card-counter {
         box-shadow: 2px 2px 10px #DADADA;
         margin: 5px;
@@ -19,23 +24,39 @@
     }
 
     .card-counter.primary {
-        border-left: 10px solid #007bff;
+        border-left: 10px solid rgba(0, 123, 255, var(--counterOpacity));
         color: black;
+    }
+
+    .card-counter.primary:hover{
+        border-left: 10px solid rgba(0, 123, 255, var(--hoverOpacity));
     }
 
     .card-counter.danger {
-        border-left: 10px solid #ef5350;
+        border-left: 10px solid rgba(239, 83, 80, var(--counterOpacity));
         color: black;
+    }
+
+    .card-counter.danger:hover {
+        border-left: 10px solid rgba(239, 83, 80, var(--hoverOpacity));
     }
 
     .card-counter.success {
-        border-left: 10px solid #66bb6a;
+        border-left: 10px solid rgba(102, 187, 106, var(--counterOpacity));
         color: black;
     }
 
+    .card-counter.success:hover {
+        border-left: 10px solid rgba(102, 187, 106, var(--hoverOpacity));
+    }
+
     .card-counter.info {
-        border-left: 10px solid #26c6da;
+        border-left: 10px solid rgba(38, 198, 218, var(--counterOpacity));
         color: black;
+    }
+
+    .card-counter.info:hover {
+        border-left: 10px solid rgba(38, 198, 218, var(--hoverOpacity));
     }
 
     .card-counter i {
@@ -89,11 +110,13 @@
 
         
 
-        <div class="col-md-3">
+        <div class="col-md-3" title="Keçmiş 5 saatda abunə olanlar">
             <div class="card-counter success">
                 <i class="fa fa-database"></i>
-                <span class="count-numbers">6875</span>
-                <span class="count-name">Data</span>
+                <span class="count-numbers">
+                    {{ $newSubCount }}
+                </span>
+                <span class="count-name">Yeni abunələr</span>
             </div>
         </div>
 
@@ -106,5 +129,7 @@
         </div>
     </div>
 </div>
+
+
 
 @endsection

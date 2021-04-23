@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\SubscribeController;
 use App\Subscriber;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -58,9 +59,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('admin', function () {
 
         // Total subscribers (Share the view with only this view)
+        // New subscribers (Subscribed within past 5 hours)
         view()->composer(['admin.dashboard'], function ($view) {
             $totalSubscribers = Subscriber::get()->count();
-            $view->with('totalSubscribers', $totalSubscribers);
+            $newSubsribersCount = Subscriber::where('created_at','>', Carbon::now()->subHours(5));
+            $view->with('totalSubscribers', $totalSubscribers)
+                    ->with('newSubCount', $newSubsribersCount->count() );
         });
 
         return view('admin.dashboard');
