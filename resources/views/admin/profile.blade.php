@@ -15,7 +15,9 @@
         box-shadow: none !important;
     }
 
-    .advancedSettings:hover {
+    .advancedSettings:hover {        
+        background-color: rgb(233, 233, 233);
+        border-radius: 25px;
         text-decoration: none;
     }
 
@@ -96,7 +98,7 @@
                 <div class="d-flex justify-content-center mb-3">
                     <a class="advancedSettings" role="button" data-toggle="collapse" href="#advancedCollapse"
                         aria-expanded="false" aria-controls="advancedCollapse">
-                        <div class="d-flex align-items-center advancedSettingsDiv bg-primary text-white py-1 px-3" style="border-radius: 25px;">
+                        <div class="badge badge-transparent d-flex align-items-center advancedSettingsDiv text-primary py-1 px-3">
                             Advanced
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-caret-right advancedSettingsIcon ml-1" viewBox="0 0 16 16">
