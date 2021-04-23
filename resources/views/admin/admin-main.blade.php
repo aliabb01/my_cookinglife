@@ -47,7 +47,7 @@
             background-color: rgb(21, 168, 21) !important;
         }
 
-        .active {
+        .nav .active {
             font-weight: bold;
             border-left: 10px solid rgb(0, 153, 255);
         }
@@ -59,7 +59,7 @@
         }
 
         .sidebarLink {
-            border-radius: 5px;
+            border-radius: 4px;
         }
     </style>
 
