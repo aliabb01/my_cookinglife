@@ -54,9 +54,8 @@ class AdminController extends Controller
     }
 
     // destroy currently logged in admins profile
-    public function destroy()
+    public function destroy(User $user)
     {
-        $user = User::where('id', auth()->user()->id);
         $user->delete();
         return redirect()
             ->route('home')

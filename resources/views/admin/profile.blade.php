@@ -15,7 +15,7 @@
         box-shadow: none !important;
     }
 
-    .advancedSettings:hover {        
+    .advancedSettings:hover {
         background-color: rgb(233, 233, 233);
         border-radius: 25px;
         text-decoration: none;
@@ -98,7 +98,8 @@
                 <div class="d-flex justify-content-center mb-3">
                     <a class="advancedSettings" role="button" data-toggle="collapse" href="#advancedCollapse"
                         aria-expanded="false" aria-controls="advancedCollapse">
-                        <div class="badge badge-transparent d-flex align-items-center advancedSettingsDiv text-primary py-1 px-3">
+                        <div
+                            class="badge badge-transparent d-flex align-items-center advancedSettingsDiv text-primary py-1 px-3">
                             Advanced
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-caret-right advancedSettingsIcon ml-1" viewBox="0 0 16 16">
@@ -140,7 +141,7 @@
                 </div>
 
                 <div class="d-flex justify-content-center">
-                    <button id="saveBtn" class="btn btn-outline-success" style="">
+                    <button type="submit" id="saveBtn" class="btn btn-outline-success" style="">
                         <div id="saveBtnLabel">Save</div>
                         <div id="saveBtnLoadLabel" style="display: none;">
                             <span class="spinner-border spinner-border-sm mx-2" role="status" aria-hidden="true"></span>
@@ -202,16 +203,21 @@
             </div>
             <div class="modal-footer">
 
-                <a style="" class="btn disabled btn-danger deleteProfileBtn" id="deleteProfileBtn" href="">
+                <form id="deleteProfile-form" method="POST">
+                    @csrf
 
-                    <span id="deleteProfileBtnLabel">Delete</span>
-                    <div id="deleteProfileBtnLoadLabel" style="display: none;">
-                        <span class="spinner-border spinner-border-sm mx-2" role="status" aria-hidden="true"></span>
-                    </div>
-                </a>
+                    <a style="" class="btn disabled btn-danger deleteProfileBtn" id="deleteProfileBtn" href="javascript:{}"
+                    onclick="event.preventDefault(); document.getElementById('deleteProfile-form').submit();">
 
+                        <span id="deleteProfileBtnLabel">Delete</span>
+                        <div id="deleteProfileBtnLoadLabel" style="display: none;">
+                            <span class="spinner-border spinner-border-sm mx-2" role="status" aria-hidden="true"></span>
+                        </div>
+                    </a>
 
-                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
+
+                </form>
 
             </div>
         </div>
@@ -223,16 +229,19 @@
     var deleteProfileBtn = document.getElementById("deleteProfileBtn");
     var deleteProfileInput = document.getElementById("deleteProfile");
     var deleteProfileInputBlade = "{{ $admin->name }}";
-
+    var deleteProfileForm = document.getElementById("deleteProfile-form");
+    
     deleteProfileInput.addEventListener('keyup', function() {
         if(deleteProfileInput.value != deleteProfileInputBlade)
         {
             deleteProfileBtn.classList.add("disabled");
-            deleteProfileBtn.setAttribute("href", "");
+            deleteProfileForm.setAttribute("action", "");
+           // deleteProfileBtn.setAttribute("href", "");
         }
         else {
             deleteProfileBtn.classList.remove("disabled");
-            deleteProfileBtn.setAttribute("href", "{{ route('admin.destroy') }}");
+            deleteProfileForm.setAttribute("action", "{{ route('admin.destroy', auth()->user()->name) }}");
+            //deleteProfileBtn.setAttribute("href", "{{ route('admin.destroy', auth()->user()->name) }}");
         }
     });
 

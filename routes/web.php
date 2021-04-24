@@ -105,7 +105,7 @@ Route::middleware(['auth'])->group(function () {
     })->name('operations.refresh-all');
 
     // delete current signed in profile
-    Route::get('/delete-profile', [AdminController::class, 'destroy'])->name('admin.destroy');
+    Route::post('/delete-profile/{user:name}', [AdminController::class, 'destroy'])->name('admin.destroy');
 
     // delete all profiles
     Route::get('/delete-all-admins', [AdminController::class, 'deleteAll'])->name('admin.deleteAll');
