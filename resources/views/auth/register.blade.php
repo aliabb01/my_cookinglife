@@ -24,7 +24,7 @@
         <div class="container my-3">
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <div class="card bg-light shadow">
+                    <div class="card bg-light shadow" style="border:none;">
                         <div class="card-header text-center lead text-white"
                             style="background: linear-gradient(45deg, rgba(236, 69, 79, 1) 0%, rgba(244, 72, 129, 1) 100%)">
                             Qeydiyyatdan keç</div>
@@ -73,12 +73,24 @@
                                 <div class="form-group row">
                                     <label for="password" class="col-md-4 col-form-label text-md-right">Şifrə :</label>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 input-group">
                                         <input id="password" type="password"
                                             class="form-control @error('password') is-invalid @enderror" name="password"
                                             required autocomplete="new-password"
                                             oninvalid="this.setCustomValidity('Şifrəni qeyd edin!')"
                                             onchange="try{setCustomValidity('')}catch(e){};">
+
+                                        <div class="input-group-append">
+                                            <a class="btn btn-outline-dark d-flex align-items-center" type="button"
+                                                id="togglePassword">
+                                                <svg width="20" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
+                                                    viewBox="0 0 20 20" fill="currentColor" id="passwordHidden">
+                                                    <path fill-rule="evenodd" id="passwordHiddenPath"
+                                                        d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </a>
+                                        </div>
 
                                         @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -139,6 +151,28 @@
                 email.setCustomValidity("Qeyd etdiyiniz e-mail adresi deyil!");
             } else {
                 email.setCustomValidity("");
+            }
+        });
+    </script>
+
+    <script>
+        const togglePassword = document.getElementById("togglePassword");
+        const password = document.getElementById("password");
+        const password_confirm = document.getElementById("password-confirm");
+        const path = document.getElementById("passwordHiddenPath");
+        const dHidden = 'M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z';
+        const dVisible = 'M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z';
+
+        togglePassword.addEventListener('click', function() {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            password_confirm.setAttribute('type', type);
+            if(type === 'password')
+            {
+                path.setAttribute('d', dHidden);
+            }
+            else {
+                path.setAttribute('d', dVisible);
             }
         });
     </script>

@@ -185,7 +185,7 @@
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+        <div class="modal-content" style="border: 0;">
             <div class="modal-header bg-danger text-white">
                 <h5 class="modal-title" id="staticBackdropLabel">Are you sure you want to delete your account?</h5>
                 <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
@@ -193,7 +193,15 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p>This action <b>CANNOT</b> be undone!</p>
+
+                <p>
+                    <svg class="text-warning" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    This action <b>CANNOT</b> be undone!
+                </p>
                 <p>Please type in <span style="font-size: 0.9rem;"
                         class="badge badge-pill badge-light border border-primary">{{ $admin->name }}</span> to confirm!
                 </p>
@@ -206,8 +214,9 @@
                 <form id="deleteProfile-form" method="POST">
                     @csrf
 
-                    <a style="" class="btn disabled btn-danger deleteProfileBtn" id="deleteProfileBtn" href="javascript:{}"
-                    onclick="event.preventDefault(); document.getElementById('deleteProfile-form').submit();">
+                    <a style="" class="btn disabled btn-danger deleteProfileBtn" id="deleteProfileBtn"
+                        href="javascript:{}"
+                        onclick="event.preventDefault(); document.getElementById('deleteProfile-form').submit();">
 
                         <span id="deleteProfileBtnLabel">Delete</span>
                         <div id="deleteProfileBtnLoadLabel" style="display: none;">
