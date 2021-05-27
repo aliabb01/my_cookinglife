@@ -75,7 +75,7 @@
 		</div>
 	</div>
 
-	<div class="container px-5" style="flex-wrap: wrap; padding-right: 100px; padding-left: 100px;">
+	<div class="container" style="">
 
 		<div class="row">
 
