@@ -62,9 +62,9 @@ Route::middleware(['auth'])->group(function () {
         // New subscribers (Subscribed within past 5 hours)
         view()->composer(['admin.dashboard'], function ($view) {
             $totalSubscribers = Subscriber::get()->count();
-            $newSubsribersCount = Subscriber::where('created_at','>', Carbon::now()->subHours(5));
+            $newSubscribersCount = Subscriber::where('created_at','>', Carbon::now()->subHours(5));
             $view->with('totalSubscribers', $totalSubscribers)
-                    ->with('newSubCount', $newSubsribersCount->count() );
+                    ->with('newSubCount', $newSubscribersCount->count() );
         });
 
         return view('admin.dashboard');
