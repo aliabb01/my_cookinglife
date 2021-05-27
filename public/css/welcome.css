@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .main-container {
     background-image: url("../images/svg/background-top-main.svg");
     background-repeat: no-repeat;

@@ -37,7 +37,7 @@ class SubscribeController extends Controller
 
         // $subscriber->save()  no need to save as we have firstOrCreate method
 
-        // check if subscriber was added recently then send him an email. Otherwise tell him it is a duplicate
+        // check if subscriber was created or found from database. If created then send him an email. Otherwise tell him it is a duplicate
 
         if ($subscriber->wasRecentlyCreated) {
             Mail::to($subscriber->subscribedMail)->send(new SubscribeNotificationMail($subscriberData));
