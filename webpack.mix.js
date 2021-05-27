@@ -15,3 +15,6 @@ require('laravel-mix-purgecss'); //PurgeCSS to remove unused css
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .purgeCss();
+
+// live-reload
+// mix.browserSync('127.0.0.1:8000');
