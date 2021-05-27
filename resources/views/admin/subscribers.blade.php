@@ -75,14 +75,14 @@
 
         <div>
             @if (auth()->user()->privilege == 1)
-            <form id="deleteAllByAdmin-form" action="{{ route('admin.subscriber.deleteAll') }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <a class="pr-3 text-danger" href=""
-                    onclick="event.preventDefault(); document.getElementById('deleteAllByAdmin-form').submit();">
-                    Delete all
-                </a>
-            </form>
+                <form id="deleteAllByAdmin-form" action="{{ route('admin.subscriber.deleteAll') }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <a class="pr-3 text-danger" href=""
+                        onclick="event.preventDefault(); document.getElementById('deleteAllByAdmin-form').submit();">
+                        Delete all
+                    </a>
+                </form>
             @endif
         </div>
 
@@ -117,15 +117,15 @@
 
                 <td>
                     @if (auth()->user()->privilege == 1)
-                    <form id="deleteByAdmin-form-{{ $subscriber->id }}"
-                        action="{{ route('admin.subscriber.destroy', [$subscriber->subscribedMail]) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <a class="text-danger" href="{{ route('subscription.destroy',  $subscriber->subscribedMail) }}"
-                            onclick="event.preventDefault(); this.parentNode.submit();">
-                            Sil
-                        </a>
-                    </form>
+                        <form id="deleteByAdmin-form-{{ $subscriber->id }}"
+                            action="{{ route('admin.subscriber.destroy', [$subscriber->subscribedMail]) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <a class="text-danger" href="{{ route('subscription.destroy',  $subscriber->subscribedMail) }}"
+                                onclick="event.preventDefault(); this.parentNode.submit();">
+                                Sil
+                            </a>
+                        </form>
                     @endif
                 </td>
             </tr>

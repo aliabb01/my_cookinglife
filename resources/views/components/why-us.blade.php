@@ -19,15 +19,33 @@
         border-bottom: 5px solid;
     }
 
-    .why-us-card {
+    .why-us-card-1:hover {
+        border: 1px solid #499AFC;
+    }
+
+    .why-us-card-2:hover {
         border: 1px solid red;
     }
 
-    .why-us-card:hover {
-        transition: 0.5s;
-        transform: translateX(-7px) translateY(-7px);
+    .why-us-card-3:hover {
+        border: 1px solid #38C172;
     }
 
+    .why-us-card-1:hover,
+    .why-us-card-2:hover,
+    .why-us-card-3:hover {
+        transition: 0.5s;
+        transform: translateX(-10px) translateY(-10px);
+    }
+
+    .why-us-card {
+        border-radius: 23px;
+    }
+
+    .card {
+        border-radius: 25px !important;
+    }
+    
     .card-wrapper {
         padding: 0;
         transition: 0.5s;
@@ -70,7 +88,7 @@
 
 
             <div class="card text-center bg-primary border rounded">
-                <div class="card-wrapper why-us-card bg-white">
+                <div class="card-wrapper why-us-card why-us-card-1 bg-white">
                     <div class="">
                         <img class="" src="/images/svg/customer_satisfaction.svg" alt="" width="100%" height="auto">
                     </div>
@@ -85,7 +103,7 @@
 
 
             <div class="card text-center bg-danger border rounded">
-                <div class="card-wrapper why-us-card bg-white">
+                <div class="card-wrapper why-us-card why-us-card-2 bg-white">
                     <div class="">
                         <img class="pt-2 pb-2" src="/images/svg/low_price.svg" alt="" width="100%" height="auto">
                     </div>
@@ -99,7 +117,7 @@
 
 
             <div class="card text-center bg-success border rounded">
-                <div class="card-wrapper why-us-card bg-white">
+                <div class="card-wrapper why-us-card why-us-card-3 bg-white">
                     <div class="">
                         <img class="pt-2 pb-2" src="/images/svg/high_quality.svg" alt="" width="100%" height="auto">
                     </div>

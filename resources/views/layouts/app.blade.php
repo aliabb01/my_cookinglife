@@ -47,6 +47,12 @@
 </head>
 
 <body>
+    <style>
+        .active a.nav-link {
+            font-size: 130%;
+        }
+    </style>
+
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-color shadow-sm navigationBar">
             <div class="container">
@@ -61,9 +67,9 @@
                     <span> </span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" style="flex-grow: 0.6" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav m-3">
+                    <ul class="navbar-nav m-3" style="align-items: center;">
                         <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="/" class="nav-link">Ana
                                 Səhifə</a> </li>
                         <li class="{{ Request::is('haqqimizda') ? 'active' : '' }}"><a href="/haqqimizda"

@@ -1,4 +1,5 @@
 <style>
+    /* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap'); */
     .footer {
         position: absolute;
         bottom: 0;
@@ -90,6 +91,10 @@
 
     .pl-3 {
         padding-left: 1rem;
+    }
+
+    .footer-brand {
+        font-family: 'Rubik', sans-serif;
     }
 </style>
 
@@ -201,10 +206,6 @@
         </div>
         @endauth
     </div>
-
-
-
-
 
 </div>
 

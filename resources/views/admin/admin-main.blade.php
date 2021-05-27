@@ -65,12 +65,13 @@
         .active .sidebarSVG {
             color: #0099ff;
         }
+
+        /* Spinner */
     </style>
 
 </head>
 
 <body onload="startTime()">
-
     <nav class="navbar navbar-dark bg-dark flex-md-nowrap">
         <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">MyCookingLife</a>
         <small class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Admin Panel</small>
@@ -81,7 +82,7 @@
         </ul>
     </nav>
 
-    <div class="container-fluid">
+    <div id="admin-main" class="container-fluid">
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar"
                 style="border-bottom-right-radius: 30px;">
@@ -186,28 +187,34 @@
             </nav>
 
             <!--col-md-9 ml-sm-auto col-lg-10 px-md-4-->
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 vh-100 mb-5" style="">
+            <main id="main" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 vh-100 mb-5" style="">
 
-                <div class="container d-flex justify-content-around">
-                    <div id="dynamicTime"></div>
-                </div>
+                {{-- <div id="loader" class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div> --}}
 
-                <div class="d-flex justify-content-around">
-                    <div>
-                        <span>Signed in as:</span>
-                        <h4>{{ auth()->user()->name }}</h4>
+                <div id="main-body" style="">
+
+                    <div class="container d-flex justify-content-around">
+                        <div id="dynamicTime"></div>
                     </div>
 
-                    <div class="text-center">
-                        <span>Admin Privileges:</span>
-                        <h4>
-                            @include(auth()->user()->returnPrivilege())
-                        </h4>
+                    <div class="d-flex justify-content-around">
+                        <div>
+                            <span>Signed in as:</span>
+                            <h4>{{ auth()->user()->name }}</h4>
+                        </div>
+
+                        <div class="text-center">
+                            <span>Admin Privileges:</span>
+                            <h4>
+                                @include(auth()->user()->returnPrivilege())
+                            </h4>
+                        </div>
                     </div>
+
+                    @yield('admin-content')
                 </div>
-
-                @yield('admin-content')
-
             </main>
         </div>
     </div>

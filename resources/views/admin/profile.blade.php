@@ -166,7 +166,7 @@
 
                 <div class="d-flex align-items-center">
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#staticBackdrop">
+                    <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#staticBackdrop">
                         Delete Profile
                     </button>
                 </div>
@@ -214,7 +214,7 @@
                 <form id="deleteProfile-form" method="POST">
                     @csrf
 
-                    <a style="" class="btn disabled btn-danger deleteProfileBtn" id="deleteProfileBtn"
+                    <a style="" class="btn btn-danger disabled deleteProfileBtn" id="deleteProfileBtn"
                         href="javascript:{}"
                         onclick="event.preventDefault(); document.getElementById('deleteProfile-form').submit();">
 
