@@ -89,6 +89,9 @@ Route::middleware(['auth'])->group(function () {
     // update user profile PATCH
     Route::patch('/profile/@{user:name}', [AdminController::class, 'update'])->name('admin.profile.update');
 
+    // delete current signed in profile
+    Route::post('/delete-profile/{user:name}', [AdminController::class, 'destroy'])->name('admin.destroy');
+
     // show operations page
     Route::get('operations', function () {
         return view('admin.operations');
@@ -103,9 +106,6 @@ Route::middleware(['auth'])->group(function () {
         Artisan::call('migrate:refresh');
         return redirect()->back();
     })->name('operations.refresh-all');
-
-    // delete current signed in profile
-    Route::post('/delete-profile/{user:name}', [AdminController::class, 'destroy'])->name('admin.destroy');
 
     // delete all profiles
     Route::get('/delete-all-admins', [AdminController::class, 'deleteAll'])->name('admin.deleteAll');
