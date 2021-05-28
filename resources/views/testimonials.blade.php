@@ -1,4 +1,18 @@
 <style>
+	.testimonialSection {
+		background-image: url('images/svg/testimonial_section_bg.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.testimonialContainer {}
+
+	@media only screen and (max-width: 800px) {
+		.testimonialSection {
+			background-image: none;
+		}
+	}
+
 	.testimonialCol {
 		margin-bottom: 30px;
 	}
@@ -7,11 +21,12 @@
 		background-color: rgb(255, 255, 255);
 		border: none;
 		border-radius: 9px;
+		margin-top: 14px;
 		font-family: 'Space Grotesk', sans-serif;
 	}
 
 	.testimonialCard:hover .testimonialAuthor {
-		color: rgb(31, 198, 253);
+		color: #aaa1f3;
 		transition: 0.3s;
 	}
 
@@ -43,6 +58,16 @@
 	.defaultProfileImg {}
 
 	/* Slider */
+	.glide__slide {
+		transform: scale(0.9);
+		transition: 0.3s;
+	}
+
+	.glide__slide--active {
+		transform: scale(1);
+		transition: 0.3s;
+	}
+
 	.glide__bullet {
 		box-shadow: none;
 		border: none;
@@ -55,7 +80,7 @@
 	}
 
 	.glide__bullet--active {
-		background-color: #00bfff;
+		background-color: #aaa1f3;
 		transition: 0.3s;
 	}
 </style>
@@ -67,7 +92,7 @@
 	integrity='sha512-wYsVD8ho6rJOAo1Xf92gguhOGQ+aWgxuyKydjyEax4bnuEmHUt6VGwgpUqN8VlB4w50d0nt+ZL+3pgaFMAmdNQ=='
 	crossorigin='anonymous' />
 
-<section>
+<section class="py-5 testimonialSection">
 	<div class="container text-center testimonials my-5">
 		<h2 class="testimonials__label text-center py-5" style="color: #867AE9;">Rəylər</h2>
 		<div class="d-flex justify-content-center">
@@ -75,7 +100,7 @@
 		</div>
 	</div>
 
-	<div class="container" style="">
+	<div class="container testimonialContainer" style="background-color: transparent;">
 
 		<div class="row">
 
@@ -92,7 +117,7 @@
 
 
 							<div class="col-md-8 testimonialCol">
-								<div class="card border-dark testimonialCard rotatedLeft">
+								<div class="card testimonialCard rotatedLeft shadow-sm">
 
 									<div class="d-flex justify-content-center my-3" style="height: 100px;">
 										<i class="material-icons"
@@ -107,7 +132,7 @@
 											voluptas modi animi, repellat excepturi fuga laborum!</p>
 									</div>
 
-									<div class="testimonialRating text-center">
+									<div class="testimonialRating mb-3 text-center">
 										<i class="material-icons star">star</i>
 										<i class="material-icons star">star</i>
 										<i class="material-icons star">star</i>
@@ -121,7 +146,7 @@
 						<li class="glide__slide d-flex justify-content-center">
 
 							<div class="col-md-8 testimonialCol">
-								<div class="card border-dark testimonialCard rotatedRight">
+								<div class="card testimonialCard rotatedRight shadow-sm">
 
 									<div class="d-flex justify-content-center my-3" style="height: 100px;">
 										<i class="material-icons"
@@ -136,7 +161,7 @@
 											voluptas modi animi, repellat excepturi fuga laborum!</p>
 									</div>
 
-									<div class="testimonialRating text-center">
+									<div class="testimonialRating mb-3 text-center">
 										<i class="material-icons star">star</i>
 										<i class="material-icons star">star</i>
 										<i class="material-icons star">star</i>
@@ -150,7 +175,7 @@
 						<li class="glide__slide d-flex justify-content-center">
 
 							<div class="col-md-8 testimonialCol">
-								<div class="card border-dark testimonialCard rotatedLeft">
+								<div class="card testimonialCard rotatedLeft shadow-sm">
 
 									<div class="d-flex justify-content-center my-3" style="height: 100px;">
 										<i class="material-icons"
@@ -165,7 +190,7 @@
 											voluptas modi animi, repellat excepturi fuga laborum!</p>
 									</div>
 
-									<div class="testimonialRating text-center">
+									<div class="testimonialRating mb-3 text-center">
 										<i class="material-icons star">star</i>
 										<i class="material-icons star">star</i>
 										<i class="material-icons star">star</i>
@@ -197,10 +222,24 @@
 <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 
 <script>
-	new Glide('.glide', {
+	const config = {
+		type: 'carousel',
+		perView: 2,
+		breakpoints: {
+			1500: {
+				perView: 1
+			},
+		},
 		autoplay: 10000,
 		hoverpause: true,
 		keyboard: true,
 		animationDuration: 700,
-	}).mount();
+		focusAt: "center",
+		// afterTransition : function(event) {
+        //     console.log(event.index); // the current slide number
+        // }
+	};	
+
+	var glide = new Glide('.glide', config).mount();
+
 </script>
