@@ -103,6 +103,11 @@
         font-family: 'Space Grotesk', sans-serif;
     }
 
+    .send-feedback-offer {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.3em;
+    }
+
     
 </style>
 
@@ -171,8 +176,7 @@
     @include('testimonials')
 
     <div class="container text-center mt-5 py-5">
-        
-        <a href="https://forms.gle/tsSCJ1xhWWib87c26" target="_blank" style="color: #867AE9; font-size: 1.3em;"><i class="material-icons">question_answer</i> Rəyinizi göndərin!</a>
+        <a href="https://forms.gle/tsSCJ1xhWWib87c26" class="send-feedback-offer" target="_blank" style="color: #867AE9;"><i class="material-icons">question_answer</i> Rəyinizi göndərin!</a>
     </div>
     
 </div>
