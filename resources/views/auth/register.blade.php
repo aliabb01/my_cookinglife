@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -178,4 +178,40 @@
     </script>
 </body>
 
+</html> --}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+</head>
+<body>
+    <style>
+        html {
+            padding: 0;
+            margin: 0;
+        }
+        .flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+    </style>
+    <div class="flex">
+        <p style="font-size: 1.2rem;">Qeydiyyatdan keçmək üçün administratorla əlaqə saxlayın!</p>
+
+        <div>        
+            <p style="font-size: 1.2rem;">
+                <a style="text-decoration-line: none; color: rgb(255, 66, 66); margin-right: 10px;" href="/">Ana səhifə</a>
+
+                <a style="text-decoration-line: none; color: rgb(19, 194, 19); margin-left: 10px;" href="mailto:ali3abbasov@gmail.com">Administratorla əlaqə</a>
+            </p>
+        </div>
+    </div>
+</body>
 </html>
